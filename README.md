@@ -1,7 +1,7 @@
 # SehatBank
 Healthy Lifestyle Planner
 
-Nggak Sehat
+Kelompok Sehat
 
 Ketua Kelompok: Aly Murry Darmoko
 
