@@ -3,9 +3,9 @@ Healthy Lifestyle Planner
 
 Kelompok Sehat
 
-Ketua Kelompok: Aly Murry Darmoko
+Ketua Kelompok: 
 
-Anggota 1: Thoriqutsani Anastyo Rasnan
+Anggota 1: 
 
-Anggota 2: Daru Okta Buana
+Anggota 2: 
 
