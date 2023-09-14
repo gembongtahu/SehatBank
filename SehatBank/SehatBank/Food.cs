@@ -8,18 +8,15 @@ namespace SehatBank
 {
     internal class Food
     {
-        private int foodID;
-        private string foodName;
-        private int calories;
+        public int FoodID { get; }
+        public string FoodName { get; }
+        public int Calories { get; }
 
-        public int getFoodID()
+        public Food(int foodID, string foodName, int calories)
         {
-            return foodID;
+            FoodID = foodID;
+            FoodName = foodName;
+            Calories = calories;
         }
-        public string getFoodName()
-        {
-            return foodName;
-        }
-        public int getCalories() { }
     }
 }
