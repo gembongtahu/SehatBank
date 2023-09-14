@@ -9,4 +9,4 @@ Anggota 1: Thoriqutsani Anastyo Rasnan - 21/479154/TK/52816
 
 Anggota 2: Daru Okta Buana - 21/475397/TK/52480
 
-![Alt Text](https://drive.google.com/file/d/17UaM5tuEiHdr0Jim5bd-C8toBGM_Dl5z/view?usp=drivesdk)
+![Class Diagram](https://drive.google.com/file/d/17UaM5tuEiHdr0Jim5bd-C8toBGM_Dl5z/view?usp=drivesdk)
