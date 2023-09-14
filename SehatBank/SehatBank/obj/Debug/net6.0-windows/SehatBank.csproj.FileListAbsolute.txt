@@ -1,0 +1,6 @@
+C:\Users\thorofhell666\source\repos\SehatBank\SehatBank\obj\Debug\net6.0-windows\SehatBank.Form1.resources
+C:\Users\thorofhell666\source\repos\SehatBank\SehatBank\obj\Debug\net6.0-windows\SehatBank.csproj.GenerateResource.cache
+C:\Users\thorofhell666\source\repos\SehatBank\SehatBank\obj\Debug\net6.0-windows\SehatBank.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\thorofhell666\source\repos\SehatBank\SehatBank\obj\Debug\net6.0-windows\SehatBank.AssemblyInfoInputs.cache
+C:\Users\thorofhell666\source\repos\SehatBank\SehatBank\obj\Debug\net6.0-windows\SehatBank.AssemblyInfo.cs
+C:\Users\thorofhell666\source\repos\SehatBank\SehatBank\obj\Debug\net6.0-windows\SehatBank.csproj.CoreCompileInputs.cache
