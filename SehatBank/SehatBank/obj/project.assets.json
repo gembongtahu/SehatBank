@@ -8,19 +8,24 @@
     "net6.0-windows7.0": []
   },
   "packageFolders": {
-    "C:\\Users\\thorofhell666\\.nuget\\packages\\": {}
+    "C:\\Users\\thori\\.nuget\\packages\\": {},
+    "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\thorofhell666\\source\\repos\\SehatBank\\SehatBank\\SehatBank.csproj",
+      "projectUniqueName": "C:\\Users\\thori\\source\\repos\\goodguythor\\SehatBank\\SehatBank\\SehatBank\\SehatBank.csproj",
       "projectName": "SehatBank",
-      "projectPath": "C:\\Users\\thorofhell666\\source\\repos\\SehatBank\\SehatBank\\SehatBank.csproj",
-      "packagesPath": "C:\\Users\\thorofhell666\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\thorofhell666\\source\\repos\\SehatBank\\SehatBank\\obj\\",
+      "projectPath": "C:\\Users\\thori\\source\\repos\\goodguythor\\SehatBank\\SehatBank\\SehatBank\\SehatBank.csproj",
+      "packagesPath": "C:\\Users\\thori\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\thori\\source\\repos\\goodguythor\\SehatBank\\SehatBank\\SehatBank\\obj\\",
       "projectStyle": "PackageReference",
+      "fallbackFolders": [
+        "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+      ],
       "configFilePaths": [
-        "C:\\Users\\thorofhell666\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\thori\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
@@ -28,7 +33,9 @@
       ],
       "sources": {
         "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
-        "https://api.nuget.org/v3/index.json": {}
+        "C:\\Program Files\\dotnet\\library-packs": {},
+        "C:\\Users\\thori\\Downloads\\dsharp": {},
+        "C:\\Users\\thori\\source\\repos\\RandomTrivia\\RandomTrivia\\bin\\Debug": {}
       },
       "frameworks": {
         "net6.0-windows7.0": {
@@ -64,7 +71,7 @@
             "privateAssets": "none"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.400\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.401\\RuntimeIdentifierGraph.json"
       }
     }
   }
