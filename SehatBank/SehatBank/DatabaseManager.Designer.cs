@@ -30,9 +30,12 @@
         {
             label1 = new Label();
             mainMenuButton = new Button();
-            showWorkoutButton = new Button();
             showActivitiesButton = new Button();
             showFoodButton = new Button();
+            foodDataView = new DataGridView();
+            activitiesDataView = new DataGridView();
+            ((System.ComponentModel.ISupportInitialize)foodDataView).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)activitiesDataView).BeginInit();
             SuspendLayout();
             // 
             // label1
@@ -41,7 +44,7 @@
             label1.AutoSize = true;
             label1.Font = new Font("Heebo", 48F, FontStyle.Regular, GraphicsUnit.Point);
             label1.ForeColor = SystemColors.ButtonHighlight;
-            label1.Location = new Point(131, 68);
+            label1.Location = new Point(115, -1);
             label1.Name = "label1";
             label1.Size = new Size(580, 94);
             label1.TabIndex = 2;
@@ -52,7 +55,7 @@
             // 
             mainMenuButton.BackColor = Color.DimGray;
             mainMenuButton.ForeColor = SystemColors.ButtonHighlight;
-            mainMenuButton.Location = new Point(625, 378);
+            mainMenuButton.Location = new Point(667, 415);
             mainMenuButton.Name = "mainMenuButton";
             mainMenuButton.Size = new Size(107, 23);
             mainMenuButton.TabIndex = 3;
@@ -60,38 +63,47 @@
             mainMenuButton.UseVisualStyleBackColor = false;
             mainMenuButton.Click += mainMenuButton_Click;
             // 
-            // showWorkoutButton
-            // 
-            showWorkoutButton.BackColor = Color.DimGray;
-            showWorkoutButton.ForeColor = SystemColors.ButtonHighlight;
-            showWorkoutButton.Location = new Point(343, 216);
-            showWorkoutButton.Name = "showWorkoutButton";
-            showWorkoutButton.Size = new Size(157, 23);
-            showWorkoutButton.TabIndex = 4;
-            showWorkoutButton.Text = "Show Workout Database";
-            showWorkoutButton.UseVisualStyleBackColor = false;
-            // 
             // showActivitiesButton
             // 
             showActivitiesButton.BackColor = Color.DimGray;
             showActivitiesButton.ForeColor = SystemColors.ButtonHighlight;
-            showActivitiesButton.Location = new Point(554, 216);
+            showActivitiesButton.Location = new Point(512, 83);
             showActivitiesButton.Name = "showActivitiesButton";
             showActivitiesButton.Size = new Size(157, 23);
             showActivitiesButton.TabIndex = 5;
             showActivitiesButton.Text = "Show Activities Database";
             showActivitiesButton.UseVisualStyleBackColor = false;
+            showActivitiesButton.Click += showActivitiesButton_Click;
             // 
             // showFoodButton
             // 
             showFoodButton.BackColor = Color.DimGray;
             showFoodButton.ForeColor = SystemColors.ButtonHighlight;
-            showFoodButton.Location = new Point(131, 216);
+            showFoodButton.Location = new Point(135, 83);
             showFoodButton.Name = "showFoodButton";
             showFoodButton.Size = new Size(157, 23);
             showFoodButton.TabIndex = 6;
             showFoodButton.Text = "Show Food Database";
             showFoodButton.UseVisualStyleBackColor = false;
+            showFoodButton.Click += showFoodButton_Click;
+            // 
+            // foodDataView
+            // 
+            foodDataView.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            foodDataView.Location = new Point(68, 112);
+            foodDataView.Name = "foodDataView";
+            foodDataView.RowTemplate.Height = 25;
+            foodDataView.Size = new Size(283, 287);
+            foodDataView.TabIndex = 7;
+            // 
+            // activitiesDataView
+            // 
+            activitiesDataView.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            activitiesDataView.Location = new Point(447, 112);
+            activitiesDataView.Name = "activitiesDataView";
+            activitiesDataView.RowTemplate.Height = 25;
+            activitiesDataView.Size = new Size(283, 287);
+            activitiesDataView.TabIndex = 8;
             // 
             // DatabaseManager
             // 
@@ -99,13 +111,17 @@
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.DimGray;
             ClientSize = new Size(800, 450);
+            Controls.Add(activitiesDataView);
+            Controls.Add(foodDataView);
             Controls.Add(showFoodButton);
             Controls.Add(showActivitiesButton);
-            Controls.Add(showWorkoutButton);
             Controls.Add(mainMenuButton);
             Controls.Add(label1);
             Name = "DatabaseManager";
             Text = "DatabaseManager";
+            Load += DatabaseManager_Load;
+            ((System.ComponentModel.ISupportInitialize)foodDataView).EndInit();
+            ((System.ComponentModel.ISupportInitialize)activitiesDataView).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -114,8 +130,9 @@
 
         private Label label1;
         private Button mainMenuButton;
-        private Button showWorkoutButton;
         private Button showActivitiesButton;
         private Button showFoodButton;
+        private DataGridView foodDataView;
+        private DataGridView activitiesDataView;
     }
 }
