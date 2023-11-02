@@ -19,6 +19,7 @@ namespace SehatBank
         private Rectangle fTextBox, cTextBox;
         private Rectangle iBox;
         private Font mFont, fFont, cFont;
+        Resize resize = new Resize();
 
         public CaloriesManager()
         {
@@ -55,43 +56,28 @@ namespace SehatBank
             cFont = caloriesLabel.Font;
         }
 
-        private void resizeControl(Rectangle r, Control c)
-        {
-            float xRatio = (float)(this.Width) / (float)(originalSize.Width), yRatio = (float)(this.Height) / (float)(originalSize.Height);
-            int newX = (int)(r.X * xRatio), newY = (int)(r.Y * yRatio), newWidth = (int)(r.Width * xRatio), newHeight = (int)(r.Height * yRatio);
-            c.Location = new Point(newX, newY);
-            c.Size = new Size(newWidth, newHeight);
-        }
-
-        private void resizeFont(Font f, Control c)
-        {
-            float ratio = (float)this.Height / (float)originalSize.Height;
-            int newSize = (int)(f.Size * ratio);
-            c.Font = new Font(f.FontFamily, newSize, f.Style);
-        }
-
         private void CaloriesManager_Resize(object sender, EventArgs e)
         {
-            resizeControl(mmButton, mainMenuButton);
-            resizeControl(aButton, addButton);
-            resizeControl(eButton, editButton);
-            resizeControl(dButton, deleteButton);
-            resizeControl(dayOne, dayOneView);
-            resizeControl(dayTwo, dayTwoView);
-            resizeControl(dayThree, dayThreeView);
-            resizeControl(dayFour, dayFourView);
-            resizeControl(dayFive, dayFiveView);
-            resizeControl(daySix, daySixView);
-            resizeControl(daySeven, daySevenView);
-            resizeControl(mLabel, managerLabel);
-            resizeControl(fLabel, foodLabel);
-            resizeControl(cLabel, caloriesLabel);
-            resizeControl(fTextBox, foodTextBox);
-            resizeControl(cTextBox, caloriesTextBox);
-            resizeControl(iBox, inputBox);
-            resizeFont(cFont, caloriesLabel);
-            resizeFont(fFont, foodLabel);
-            resizeFont(mFont, managerLabel);
+            resize.resizeControl(mmButton, mainMenuButton, originalSize, this.Width, this.Height);
+            resize.resizeControl(aButton, addButton, originalSize, this.Width, this.Height);
+            resize.resizeControl(eButton, editButton, originalSize, this.Width, this.Height);
+            resize.resizeControl(dButton, deleteButton, originalSize, this.Width, this.Height);
+            resize.resizeControl(dayOne, dayOneView, originalSize, this.Width, this.Height);
+            resize.resizeControl(dayTwo, dayTwoView, originalSize, this.Width, this.Height);
+            resize.resizeControl(dayThree, dayThreeView, originalSize, this.Width, this.Height);
+            resize.resizeControl(dayFour, dayFourView, originalSize, this.Width, this.Height);
+            resize.resizeControl(dayFive, dayFiveView, originalSize, this.Width, this.Height);
+            resize.resizeControl(daySix, daySixView, originalSize, this.Width, this.Height);
+            resize.resizeControl(daySeven, daySevenView, originalSize, this.Width, this.Height);
+            resize.resizeControl(mLabel, managerLabel, originalSize, this.Width, this.Height);
+            resize.resizeControl(fLabel, foodLabel, originalSize, this.Width, this.Height);
+            resize.resizeControl(cLabel, caloriesLabel, originalSize, this.Width, this.Height);
+            resize.resizeControl(fTextBox, foodTextBox, originalSize, this.Width, this.Height);
+            resize.resizeControl(cTextBox, caloriesTextBox, originalSize, this.Width, this.Height);
+            resize.resizeControl(iBox, inputBox, originalSize, this.Width, this.Height);
+            resize.resizeFont(cFont, caloriesLabel, originalSize, this.Height);
+            resize.resizeFont(fFont, foodLabel, originalSize, this.Height);
+            resize.resizeFont(mFont, managerLabel, originalSize, this.Height);
         }
 
         private void addButton_Click(object sender, EventArgs e)
