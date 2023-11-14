@@ -5,10 +5,14 @@ using System.Data;
 using System.Diagnostics;
 using System.Drawing;
 using System.Linq;
+using System.Reflection.Emit;
+using System.Runtime.InteropServices;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using Npgsql;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement.ToolBar;
 
 namespace SehatBank
 {
@@ -20,6 +24,11 @@ namespace SehatBank
         public static NpgsqlCommand cmd;
         private string sql = null;
         private DataGridViewRow r;
+        private Rectangle mmButton, aButton, fButton, originalSize;
+        private Rectangle fView, aView;
+        private Rectangle mLabel;
+        private Font mFont;
+        Resize resize = new Resize();
         public DatabaseManager()
         {
             InitializeComponent();
@@ -53,6 +62,14 @@ namespace SehatBank
         private void DatabaseManager_Load(object sender, EventArgs e)
         {
             con = new NpgsqlConnection(constring);
+            originalSize = this.Bounds;
+            mmButton = mainMenuButton.Bounds;
+            aButton = showActivitiesButton.Bounds;
+            fButton = showFoodButton.Bounds;
+            fView = foodDataView.Bounds;
+            aView = activitiesDataView.Bounds;
+            mLabel = managerLabel.Bounds;
+            mFont = managerLabel.Font;
         }
 
         private void showActivitiesButton_Click(object sender, EventArgs e)
@@ -73,6 +90,17 @@ namespace SehatBank
             {
                 MessageBox.Show("Error: " + ex.Message, "FAIL!!", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
+        }
+
+        private void DatabaseManager_Resize(object sender, EventArgs e)
+        {
+            resize.resizeControl(mmButton, mainMenuButton, originalSize, this.Width, this.Height);
+            resize.resizeControl(aButton, showActivitiesButton, originalSize, this.Width, this.Height);
+            resize.resizeControl(fButton, showFoodButton, originalSize, this.Width, this.Height);
+            resize.resizeControl(fView, foodDataView, originalSize, this.Width, this.Height);
+            resize.resizeControl(aView, activitiesDataView, originalSize, this.Width, this.Height);
+            resize.resizeControl(mLabel, managerLabel, originalSize, this.Width, this.Height);
+            resize.resizeFont(mFont, managerLabel, originalSize, this.Height);
         }
     }
 }
