@@ -79,13 +79,13 @@ namespace SehatBank
             dataTableList.Add(dtFive);
             dataTableList.Add(dtSix);
             dataTableList.Add(dtSeven);
-            sqlCommandList.Add("");
-            sqlCommandList.Add("");
-            sqlCommandList.Add("");
-            sqlCommandList.Add("");
-            sqlCommandList.Add("");
-            sqlCommandList.Add("");
-            sqlCommandList.Add("");
+            sqlCommandList.Add("SELECT cil.calories_intake_id, users.user_name, food.food_name, food.calories\r\nFROM calories_intake_list cil\r\nJOIN users ON cil.user_id = users.user_id\r\nJOIN food ON cil.food_id = food.food_id\r\nWHERE cil.date = current_date\r\nORDER BY cil.calories_intake_id;\r\n\r\n");
+            sqlCommandList.Add("SELECT cil.calories_intake_id, users.user_name, food.food_name, food.calories\r\nFROM calories_intake_list cil\r\nJOIN users ON cil.user_id = users.user_id\r\nJOIN food ON cil.food_id = food.food_id\r\nWHERE cil.date = current_date - 1\r\nORDER BY cil.calories_intake_id;\r\n\r\n");
+            sqlCommandList.Add("SELECT cil.calories_intake_id, users.user_name, food.food_name, food.calories\r\nFROM calories_intake_list cil\r\nJOIN users ON cil.user_id = users.user_id\r\nJOIN food ON cil.food_id = food.food_id\r\nWHERE cil.date = current_date - 2\r\nORDER BY cil.calories_intake_id;\r\n\r\n");
+            sqlCommandList.Add("SELECT cil.calories_intake_id, users.user_name, food.food_name, food.calories\r\nFROM calories_intake_list cil\r\nJOIN users ON cil.user_id = users.user_id\r\nJOIN food ON cil.food_id = food.food_id\r\nWHERE cil.date = current_date - 3\r\nORDER BY cil.calories_intake_id;\r\n\r\n");
+            sqlCommandList.Add("SELECT cil.calories_intake_id, users.user_name, food.food_name, food.calories\r\nFROM calories_intake_list cil\r\nJOIN users ON cil.user_id = users.user_id\r\nJOIN food ON cil.food_id = food.food_id\r\nWHERE cil.date = current_date - 4\r\nORDER BY cil.calories_intake_id;\r\n\r\n");
+            sqlCommandList.Add("SELECT cil.calories_intake_id, users.user_name, food.food_name, food.calories\r\nFROM calories_intake_list cil\r\nJOIN users ON cil.user_id = users.user_id\r\nJOIN food ON cil.food_id = food.food_id\r\nWHERE cil.date = current_date - 5\r\nORDER BY cil.calories_intake_id;\r\n\r\n");
+            sqlCommandList.Add("SELECT cil.calories_intake_id, users.user_name, food.food_name, food.calories\r\nFROM calories_intake_list cil\r\nJOIN users ON cil.user_id = users.user_id\r\nJOIN food ON cil.food_id = food.food_id\r\nWHERE cil.date = current_date - 6\r\nORDER BY cil.calories_intake_id;\r\n\r\n");
         }
 
         private void CaloriesManager_Resize(object sender, EventArgs e)
