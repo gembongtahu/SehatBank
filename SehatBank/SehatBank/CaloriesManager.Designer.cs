@@ -45,6 +45,7 @@
             dayTwoView = new DataGridView();
             dayOneView = new DataGridView();
             inputBox = new GroupBox();
+            showButton = new Button();
             ((System.ComponentModel.ISupportInitialize)daySevenView).BeginInit();
             ((System.ComponentModel.ISupportInitialize)daySixView).BeginInit();
             ((System.ComponentModel.ISupportInitialize)dayFiveView).BeginInit();
@@ -61,7 +62,7 @@
             managerLabel.AutoSize = true;
             managerLabel.Font = new Font("Heebo", 27.75F, FontStyle.Regular, GraphicsUnit.Point);
             managerLabel.ForeColor = SystemColors.ButtonHighlight;
-            managerLabel.Location = new Point(49, 29);
+            managerLabel.Location = new Point(45, 21);
             managerLabel.Name = "managerLabel";
             managerLabel.Size = new Size(314, 55);
             managerLabel.TabIndex = 13;
@@ -152,7 +153,7 @@
             daySevenView.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
             daySevenView.AutoSizeRowsMode = DataGridViewAutoSizeRowsMode.AllCells;
             daySevenView.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            daySevenView.Location = new Point(55, 130);
+            daySevenView.Location = new Point(51, 122);
             daySevenView.Name = "daySevenView";
             daySevenView.RowTemplate.Height = 25;
             daySevenView.Size = new Size(94, 241);
@@ -175,7 +176,7 @@
             daySixView.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
             daySixView.AutoSizeRowsMode = DataGridViewAutoSizeRowsMode.AllCells;
             daySixView.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            daySixView.Location = new Point(155, 130);
+            daySixView.Location = new Point(151, 122);
             daySixView.Name = "daySixView";
             daySixView.RowTemplate.Height = 25;
             daySixView.Size = new Size(94, 241);
@@ -186,7 +187,7 @@
             dayFiveView.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
             dayFiveView.AutoSizeRowsMode = DataGridViewAutoSizeRowsMode.AllCells;
             dayFiveView.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dayFiveView.Location = new Point(255, 130);
+            dayFiveView.Location = new Point(251, 122);
             dayFiveView.Name = "dayFiveView";
             dayFiveView.RowTemplate.Height = 25;
             dayFiveView.Size = new Size(94, 241);
@@ -197,7 +198,7 @@
             dayFourView.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
             dayFourView.AutoSizeRowsMode = DataGridViewAutoSizeRowsMode.AllCells;
             dayFourView.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dayFourView.Location = new Point(355, 130);
+            dayFourView.Location = new Point(351, 122);
             dayFourView.Name = "dayFourView";
             dayFourView.RowTemplate.Height = 25;
             dayFourView.Size = new Size(94, 241);
@@ -208,7 +209,7 @@
             dayThreeView.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
             dayThreeView.AutoSizeRowsMode = DataGridViewAutoSizeRowsMode.AllCells;
             dayThreeView.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dayThreeView.Location = new Point(455, 130);
+            dayThreeView.Location = new Point(451, 122);
             dayThreeView.Name = "dayThreeView";
             dayThreeView.RowTemplate.Height = 25;
             dayThreeView.Size = new Size(94, 241);
@@ -219,7 +220,7 @@
             dayTwoView.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
             dayTwoView.AutoSizeRowsMode = DataGridViewAutoSizeRowsMode.AllCells;
             dayTwoView.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dayTwoView.Location = new Point(555, 130);
+            dayTwoView.Location = new Point(551, 122);
             dayTwoView.Name = "dayTwoView";
             dayTwoView.RowTemplate.Height = 25;
             dayTwoView.Size = new Size(94, 241);
@@ -230,7 +231,7 @@
             dayOneView.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
             dayOneView.AutoSizeRowsMode = DataGridViewAutoSizeRowsMode.AllCells;
             dayOneView.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dayOneView.Location = new Point(655, 130);
+            dayOneView.Location = new Point(651, 122);
             dayOneView.Name = "dayOneView";
             dayOneView.RowTemplate.Height = 25;
             dayOneView.Size = new Size(94, 241);
@@ -246,7 +247,7 @@
             inputBox.Controls.Add(editButton);
             inputBox.Controls.Add(addButton);
             inputBox.ForeColor = SystemColors.ButtonHighlight;
-            inputBox.Location = new Point(476, 12);
+            inputBox.Location = new Point(472, 4);
             inputBox.Name = "inputBox";
             inputBox.Size = new Size(273, 90);
             inputBox.TabIndex = 17;
@@ -254,12 +255,26 @@
             inputBox.Text = "Input Here";
             inputBox.Enter += inputBox_Enter;
             // 
+            // showButton
+            // 
+            showButton.AutoSizeMode = AutoSizeMode.GrowAndShrink;
+            showButton.BackColor = Color.DimGray;
+            showButton.ForeColor = SystemColors.ButtonHighlight;
+            showButton.Location = new Point(45, 403);
+            showButton.Name = "showButton";
+            showButton.Size = new Size(109, 23);
+            showButton.TabIndex = 18;
+            showButton.Text = "Show All";
+            showButton.UseVisualStyleBackColor = false;
+            showButton.Click += showButton_Click;
+            // 
             // CaloriesManager
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.DimGray;
             ClientSize = new Size(800, 450);
+            Controls.Add(showButton);
             Controls.Add(inputBox);
             Controls.Add(dayOneView);
             Controls.Add(dayTwoView);
@@ -306,5 +321,6 @@
         private DataGridView dayTwoView;
         private DataGridView dayOneView;
         private GroupBox inputBox;
+        private Button showButton;
     }
 }
