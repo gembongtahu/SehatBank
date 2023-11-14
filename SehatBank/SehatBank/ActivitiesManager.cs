@@ -1,9 +1,11 @@
-﻿using System;
+﻿using Npgsql;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Linq;
+using System.Numerics;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -12,6 +14,12 @@ namespace SehatBank
 {
     public partial class ActivitiesManager : Form
     {
+        private NpgsqlConnection con;
+        string constring = "Host=localhost;Port=5432;Username=postgres;Password=admin;Database=SehatBank";
+        public DataTable dtOne, dtTwo, dtThree, dtFour, dtFive, dtSix, dtSeven;
+        public static NpgsqlCommand cmd;
+        private string sql = null;
+        private DataGridViewRow r;
         private Rectangle mmButton, aButton, eButton, dButton, originalSize;
         private Rectangle daySeven, daySix, dayFive, dayFour, dayThree, dayTwo, dayOne;
         private Rectangle mLabel, fLabel, cLabel;
@@ -19,6 +27,9 @@ namespace SehatBank
         private Rectangle iBox;
         private Font mFont, fFont, cFont;
         Resize resize = new Resize();
+        List<DataGridView> dataGridList = new List<DataGridView>();
+        List<DataTable> dataTableList = new List<DataTable>();
+        List<string> sqlCommandList = new List<string>();
         public ActivitiesManager()
         {
             InitializeComponent();
@@ -36,6 +47,7 @@ namespace SehatBank
 
         private void ActivitiesManager_Load(object sender, EventArgs e)
         {
+            con = new NpgsqlConnection(constring);
             originalSize = this.Bounds;
             mmButton = mainMenuButton.Bounds;
             aButton = addButton.Bounds;
@@ -57,6 +69,27 @@ namespace SehatBank
             mFont = managerLabel.Font;
             fFont = activitiesLabel.Font;
             cFont = caloriesBurnedLabel.Font;
+            dataGridList.Add(dayOneView);
+            dataGridList.Add(dayTwoView);
+            dataGridList.Add(dayThreeView);
+            dataGridList.Add(dayFourView);
+            dataGridList.Add(dayFiveView);
+            dataGridList.Add(daySixView);
+            dataGridList.Add(daySevenView);
+            dataTableList.Add(dtOne);
+            dataTableList.Add(dtTwo);
+            dataTableList.Add(dtThree);
+            dataTableList.Add(dtFour);
+            dataTableList.Add(dtFive);
+            dataTableList.Add(dtSix);
+            dataTableList.Add(dtSeven);
+            sqlCommandList.Add("");
+            sqlCommandList.Add("");
+            sqlCommandList.Add("");
+            sqlCommandList.Add("");
+            sqlCommandList.Add("");
+            sqlCommandList.Add("");
+            sqlCommandList.Add("");
         }
 
         private void ActivitiesManager_Resize(object sender, EventArgs e)
@@ -81,6 +114,29 @@ namespace SehatBank
             resize.resizeFont(cFont, caloriesBurnedLabel, originalSize, this.Height);
             resize.resizeFont(fFont, activitiesLabel, originalSize, this.Height);
             resize.resizeFont(mFont, managerLabel, originalSize, this.Height);
+        }
+
+        private void showButton_Click(object sender, EventArgs e)
+        {
+            for (int i = 0; i < 7; i++)
+            {
+                try
+                {
+                    con.Open();
+                    dataTableList[i] = null;
+                    sql = sqlCommandList[i];
+                    cmd = new NpgsqlCommand(sql, con);
+                    dataTableList[i] = new DataTable();
+                    NpgsqlDataReader rd = cmd.ExecuteReader();
+                    dataTableList[i].Load(rd);
+                    dataGridList[i].DataSource = dataTableList[i];
+                    con.Close();
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("Error: " + ex.Message, "FAIL!!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+            }
         }
     }
 }
