@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            label1 = new Label();
+            managerLabel = new Label();
             mainMenuButton = new Button();
             showActivitiesButton = new Button();
             showFoodButton = new Button();
@@ -38,18 +38,18 @@
             ((System.ComponentModel.ISupportInitialize)activitiesDataView).BeginInit();
             SuspendLayout();
             // 
-            // label1
+            // managerLabel
             // 
-            label1.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
-            label1.AutoSize = true;
-            label1.Font = new Font("Heebo", 48F, FontStyle.Regular, GraphicsUnit.Point);
-            label1.ForeColor = SystemColors.ButtonHighlight;
-            label1.Location = new Point(115, -1);
-            label1.Name = "label1";
-            label1.Size = new Size(580, 94);
-            label1.TabIndex = 2;
-            label1.Text = "Database Manager";
-            label1.TextAlign = ContentAlignment.MiddleCenter;
+            managerLabel.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
+            managerLabel.AutoSize = true;
+            managerLabel.Font = new Font("Heebo", 48F, FontStyle.Regular, GraphicsUnit.Point);
+            managerLabel.ForeColor = SystemColors.ButtonHighlight;
+            managerLabel.Location = new Point(115, -1);
+            managerLabel.Name = "managerLabel";
+            managerLabel.Size = new Size(580, 94);
+            managerLabel.TabIndex = 2;
+            managerLabel.Text = "Database Manager";
+            managerLabel.TextAlign = ContentAlignment.MiddleCenter;
             // 
             // mainMenuButton
             // 
@@ -89,6 +89,8 @@
             // 
             // foodDataView
             // 
+            foodDataView.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+            foodDataView.AutoSizeRowsMode = DataGridViewAutoSizeRowsMode.AllCells;
             foodDataView.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             foodDataView.Location = new Point(68, 112);
             foodDataView.Name = "foodDataView";
@@ -98,6 +100,8 @@
             // 
             // activitiesDataView
             // 
+            activitiesDataView.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+            activitiesDataView.AutoSizeRowsMode = DataGridViewAutoSizeRowsMode.AllCells;
             activitiesDataView.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             activitiesDataView.Location = new Point(447, 112);
             activitiesDataView.Name = "activitiesDataView";
@@ -116,10 +120,11 @@
             Controls.Add(showFoodButton);
             Controls.Add(showActivitiesButton);
             Controls.Add(mainMenuButton);
-            Controls.Add(label1);
+            Controls.Add(managerLabel);
             Name = "DatabaseManager";
             Text = "DatabaseManager";
             Load += DatabaseManager_Load;
+            Resize += DatabaseManager_Resize;
             ((System.ComponentModel.ISupportInitialize)foodDataView).EndInit();
             ((System.ComponentModel.ISupportInitialize)activitiesDataView).EndInit();
             ResumeLayout(false);
@@ -128,7 +133,7 @@
 
         #endregion
 
-        private Label label1;
+        private Label managerLabel;
         private Button mainMenuButton;
         private Button showActivitiesButton;
         private Button showFoodButton;

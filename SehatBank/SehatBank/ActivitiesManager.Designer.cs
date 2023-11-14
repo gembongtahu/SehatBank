@@ -28,130 +28,227 @@
         /// </summary>
         private void InitializeComponent()
         {
-            label1 = new Label();
-            label2 = new Label();
-            textBox1 = new TextBox();
+            inputBox = new GroupBox();
+            caloriesBurnedTextBox = new TextBox();
+            activitiesTextBox = new TextBox();
+            activitiesLabel = new Label();
+            caloriesBurnedLabel = new Label();
+            deleteButton = new Button();
+            editButton = new Button();
             addButton = new Button();
-            label4 = new Label();
-            label3 = new Label();
-            label5 = new Label();
-            textBox2 = new TextBox();
-            button1 = new Button();
+            dayOneView = new DataGridView();
+            dayTwoView = new DataGridView();
+            dayThreeView = new DataGridView();
+            dayFourView = new DataGridView();
+            dayFiveView = new DataGridView();
+            daySixView = new DataGridView();
+            daySevenView = new DataGridView();
             mainMenuButton = new Button();
+            managerLabel = new Label();
+            inputBox.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)dayOneView).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)dayTwoView).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)dayThreeView).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)dayFourView).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)dayFiveView).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)daySixView).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)daySevenView).BeginInit();
             SuspendLayout();
             // 
-            // label1
+            // inputBox
             // 
-            label1.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
-            label1.AutoSize = true;
-            label1.Font = new Font("Heebo", 48F, FontStyle.Regular, GraphicsUnit.Point);
-            label1.ForeColor = SystemColors.ButtonHighlight;
-            label1.Location = new Point(125, 71);
-            label1.Name = "label1";
-            label1.Size = new Size(573, 94);
-            label1.TabIndex = 2;
-            label1.Text = "Activities Manager";
-            label1.TextAlign = ContentAlignment.MiddleCenter;
+            inputBox.Controls.Add(caloriesBurnedTextBox);
+            inputBox.Controls.Add(activitiesTextBox);
+            inputBox.Controls.Add(activitiesLabel);
+            inputBox.Controls.Add(caloriesBurnedLabel);
+            inputBox.Controls.Add(deleteButton);
+            inputBox.Controls.Add(editButton);
+            inputBox.Controls.Add(addButton);
+            inputBox.ForeColor = SystemColors.ButtonHighlight;
+            inputBox.Location = new Point(408, 23);
+            inputBox.Name = "inputBox";
+            inputBox.Size = new Size(323, 90);
+            inputBox.TabIndex = 27;
+            inputBox.TabStop = false;
+            inputBox.Text = "Input Here";
             // 
-            // label2
+            // caloriesBurnedTextBox
             // 
-            label2.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
-            label2.AutoSize = true;
-            label2.Font = new Font("Heebo", 11.25F, FontStyle.Regular, GraphicsUnit.Point);
-            label2.ForeColor = SystemColors.ButtonHighlight;
-            label2.Location = new Point(151, 211);
-            label2.Name = "label2";
-            label2.Size = new Size(115, 22);
-            label2.TabIndex = 11;
-            label2.Text = "Workout Name:";
-            label2.TextAlign = ContentAlignment.MiddleCenter;
+            caloriesBurnedTextBox.Location = new Point(144, 49);
+            caloriesBurnedTextBox.Name = "caloriesBurnedTextBox";
+            caloriesBurnedTextBox.Size = new Size(100, 23);
+            caloriesBurnedTextBox.TabIndex = 1;
             // 
-            // textBox1
+            // activitiesTextBox
             // 
-            textBox1.Location = new Point(272, 212);
-            textBox1.Name = "textBox1";
-            textBox1.Size = new Size(100, 23);
-            textBox1.TabIndex = 9;
+            activitiesTextBox.Location = new Point(144, 25);
+            activitiesTextBox.Name = "activitiesTextBox";
+            activitiesTextBox.Size = new Size(100, 23);
+            activitiesTextBox.TabIndex = 0;
+            // 
+            // activitiesLabel
+            // 
+            activitiesLabel.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
+            activitiesLabel.AutoSize = true;
+            activitiesLabel.Font = new Font("Heebo", 11.25F, FontStyle.Regular, GraphicsUnit.Point);
+            activitiesLabel.ForeColor = SystemColors.ButtonHighlight;
+            activitiesLabel.Location = new Point(17, 26);
+            activitiesLabel.Name = "activitiesLabel";
+            activitiesLabel.Size = new Size(121, 22);
+            activitiesLabel.TabIndex = 6;
+            activitiesLabel.Text = "Activities Name:";
+            activitiesLabel.TextAlign = ContentAlignment.MiddleCenter;
+            // 
+            // caloriesBurnedLabel
+            // 
+            caloriesBurnedLabel.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
+            caloriesBurnedLabel.AutoSize = true;
+            caloriesBurnedLabel.Font = new Font("Heebo", 11.25F, FontStyle.Regular, GraphicsUnit.Point);
+            caloriesBurnedLabel.ForeColor = SystemColors.ButtonHighlight;
+            caloriesBurnedLabel.Location = new Point(18, 50);
+            caloriesBurnedLabel.Name = "caloriesBurnedLabel";
+            caloriesBurnedLabel.Size = new Size(120, 22);
+            caloriesBurnedLabel.TabIndex = 7;
+            caloriesBurnedLabel.Text = "Calories Burned:";
+            caloriesBurnedLabel.TextAlign = ContentAlignment.MiddleCenter;
+            // 
+            // deleteButton
+            // 
+            deleteButton.AutoSizeMode = AutoSizeMode.GrowAndShrink;
+            deleteButton.BackColor = Color.DimGray;
+            deleteButton.ForeColor = SystemColors.ButtonHighlight;
+            deleteButton.Location = new Point(255, 67);
+            deleteButton.Name = "deleteButton";
+            deleteButton.Size = new Size(50, 23);
+            deleteButton.TabIndex = 4;
+            deleteButton.Text = "Delete";
+            deleteButton.UseVisualStyleBackColor = false;
+            // 
+            // editButton
+            // 
+            editButton.AutoSizeMode = AutoSizeMode.GrowAndShrink;
+            editButton.BackColor = Color.DimGray;
+            editButton.ForeColor = SystemColors.ButtonHighlight;
+            editButton.Location = new Point(255, 35);
+            editButton.Name = "editButton";
+            editButton.Size = new Size(50, 23);
+            editButton.TabIndex = 3;
+            editButton.Text = "Edit";
+            editButton.UseVisualStyleBackColor = false;
             // 
             // addButton
             // 
+            addButton.AutoSizeMode = AutoSizeMode.GrowAndShrink;
             addButton.BackColor = Color.DimGray;
             addButton.ForeColor = SystemColors.ButtonHighlight;
-            addButton.Location = new Point(305, 241);
+            addButton.Location = new Point(255, 6);
             addButton.Name = "addButton";
-            addButton.Size = new Size(67, 23);
-            addButton.TabIndex = 8;
+            addButton.Size = new Size(50, 23);
+            addButton.TabIndex = 2;
             addButton.Text = "Add";
             addButton.UseVisualStyleBackColor = false;
             // 
-            // label4
+            // dayOneView
             // 
-            label4.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
-            label4.AutoSize = true;
-            label4.Font = new Font("Heebo", 15.75F, FontStyle.Regular, GraphicsUnit.Point);
-            label4.ForeColor = SystemColors.ButtonHighlight;
-            label4.Location = new Point(195, 178);
-            label4.Name = "label4";
-            label4.Size = new Size(137, 31);
-            label4.TabIndex = 13;
-            label4.Text = "Add Workout";
-            label4.TextAlign = ContentAlignment.MiddleCenter;
+            dayOneView.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+            dayOneView.AutoSizeRowsMode = DataGridViewAutoSizeRowsMode.AllCells;
+            dayOneView.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dayOneView.Location = new Point(637, 136);
+            dayOneView.Name = "dayOneView";
+            dayOneView.RowTemplate.Height = 25;
+            dayOneView.Size = new Size(94, 241);
+            dayOneView.TabIndex = 25;
             // 
-            // label3
+            // dayTwoView
             // 
-            label3.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
-            label3.AutoSize = true;
-            label3.Font = new Font("Heebo", 15.75F, FontStyle.Regular, GraphicsUnit.Point);
-            label3.ForeColor = SystemColors.ButtonHighlight;
-            label3.Location = new Point(458, 178);
-            label3.Name = "label3";
-            label3.Size = new Size(143, 31);
-            label3.TabIndex = 17;
-            label3.Text = "Add Activities";
-            label3.TextAlign = ContentAlignment.MiddleCenter;
+            dayTwoView.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+            dayTwoView.AutoSizeRowsMode = DataGridViewAutoSizeRowsMode.AllCells;
+            dayTwoView.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dayTwoView.Location = new Point(537, 136);
+            dayTwoView.Name = "dayTwoView";
+            dayTwoView.RowTemplate.Height = 25;
+            dayTwoView.Size = new Size(94, 241);
+            dayTwoView.TabIndex = 24;
             // 
-            // label5
+            // dayThreeView
             // 
-            label5.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
-            label5.AutoSize = true;
-            label5.Font = new Font("Heebo", 11.25F, FontStyle.Regular, GraphicsUnit.Point);
-            label5.ForeColor = SystemColors.ButtonHighlight;
-            label5.Location = new Point(414, 211);
-            label5.Name = "label5";
-            label5.Size = new Size(121, 22);
-            label5.TabIndex = 16;
-            label5.Text = "Activities Name:";
-            label5.TextAlign = ContentAlignment.MiddleCenter;
+            dayThreeView.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+            dayThreeView.AutoSizeRowsMode = DataGridViewAutoSizeRowsMode.AllCells;
+            dayThreeView.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dayThreeView.Location = new Point(437, 136);
+            dayThreeView.Name = "dayThreeView";
+            dayThreeView.RowTemplate.Height = 25;
+            dayThreeView.Size = new Size(94, 241);
+            dayThreeView.TabIndex = 23;
             // 
-            // textBox2
+            // dayFourView
             // 
-            textBox2.Location = new Point(535, 212);
-            textBox2.Name = "textBox2";
-            textBox2.Size = new Size(100, 23);
-            textBox2.TabIndex = 15;
+            dayFourView.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.AllCells;
+            dayFourView.AutoSizeRowsMode = DataGridViewAutoSizeRowsMode.AllCells;
+            dayFourView.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dayFourView.Location = new Point(337, 136);
+            dayFourView.Name = "dayFourView";
+            dayFourView.RowTemplate.Height = 25;
+            dayFourView.Size = new Size(94, 241);
+            dayFourView.TabIndex = 22;
             // 
-            // button1
+            // dayFiveView
             // 
-            button1.BackColor = Color.DimGray;
-            button1.ForeColor = SystemColors.ButtonHighlight;
-            button1.Location = new Point(568, 241);
-            button1.Name = "button1";
-            button1.Size = new Size(67, 23);
-            button1.TabIndex = 14;
-            button1.Text = "Add";
-            button1.UseVisualStyleBackColor = false;
+            dayFiveView.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+            dayFiveView.AutoSizeRowsMode = DataGridViewAutoSizeRowsMode.AllCells;
+            dayFiveView.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dayFiveView.Location = new Point(237, 136);
+            dayFiveView.Name = "dayFiveView";
+            dayFiveView.RowTemplate.Height = 25;
+            dayFiveView.Size = new Size(94, 241);
+            dayFiveView.TabIndex = 21;
+            // 
+            // daySixView
+            // 
+            daySixView.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+            daySixView.AutoSizeRowsMode = DataGridViewAutoSizeRowsMode.AllCells;
+            daySixView.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            daySixView.Location = new Point(137, 136);
+            daySixView.Name = "daySixView";
+            daySixView.RowTemplate.Height = 25;
+            daySixView.Size = new Size(94, 241);
+            daySixView.TabIndex = 20;
+            // 
+            // daySevenView
+            // 
+            daySevenView.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+            daySevenView.AutoSizeRowsMode = DataGridViewAutoSizeRowsMode.AllCells;
+            daySevenView.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            daySevenView.Location = new Point(37, 136);
+            daySevenView.Name = "daySevenView";
+            daySevenView.RowTemplate.Height = 25;
+            daySevenView.Size = new Size(94, 241);
+            daySevenView.TabIndex = 19;
             // 
             // mainMenuButton
             // 
             mainMenuButton.BackColor = Color.DimGray;
             mainMenuButton.ForeColor = SystemColors.ButtonHighlight;
-            mainMenuButton.Location = new Point(625, 378);
+            mainMenuButton.Location = new Point(663, 409);
             mainMenuButton.Name = "mainMenuButton";
             mainMenuButton.Size = new Size(107, 23);
             mainMenuButton.TabIndex = 18;
             mainMenuButton.Text = "Main Menu";
             mainMenuButton.UseVisualStyleBackColor = false;
-            mainMenuButton.Click += mainMenuButton_Click;
+            mainMenuButton.Click += mainMenuButton_Click_1;
+            // 
+            // managerLabel
+            // 
+            managerLabel.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
+            managerLabel.AutoSize = true;
+            managerLabel.Font = new Font("Heebo", 27.75F, FontStyle.Regular, GraphicsUnit.Point);
+            managerLabel.ForeColor = SystemColors.ButtonHighlight;
+            managerLabel.Location = new Point(31, 35);
+            managerLabel.Name = "managerLabel";
+            managerLabel.Size = new Size(330, 55);
+            managerLabel.TabIndex = 26;
+            managerLabel.Text = "Activities Manager";
+            managerLabel.TextAlign = ContentAlignment.MiddleCenter;
             // 
             // ActivitiesManager
             // 
@@ -159,33 +256,51 @@
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.DimGray;
             ClientSize = new Size(800, 450);
+            Controls.Add(inputBox);
+            Controls.Add(dayOneView);
+            Controls.Add(dayTwoView);
+            Controls.Add(dayThreeView);
+            Controls.Add(dayFourView);
+            Controls.Add(dayFiveView);
+            Controls.Add(daySixView);
+            Controls.Add(daySevenView);
             Controls.Add(mainMenuButton);
-            Controls.Add(label3);
-            Controls.Add(label5);
-            Controls.Add(textBox2);
-            Controls.Add(button1);
-            Controls.Add(label4);
-            Controls.Add(label2);
-            Controls.Add(textBox1);
-            Controls.Add(addButton);
-            Controls.Add(label1);
+            Controls.Add(managerLabel);
             Name = "ActivitiesManager";
             Text = "ActivitiesManager";
+            Load += ActivitiesManager_Load;
+            Resize += ActivitiesManager_Resize;
+            inputBox.ResumeLayout(false);
+            inputBox.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)dayOneView).EndInit();
+            ((System.ComponentModel.ISupportInitialize)dayTwoView).EndInit();
+            ((System.ComponentModel.ISupportInitialize)dayThreeView).EndInit();
+            ((System.ComponentModel.ISupportInitialize)dayFourView).EndInit();
+            ((System.ComponentModel.ISupportInitialize)dayFiveView).EndInit();
+            ((System.ComponentModel.ISupportInitialize)daySixView).EndInit();
+            ((System.ComponentModel.ISupportInitialize)daySevenView).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
 
         #endregion
 
-        private Label label1;
-        private Label label2;
-        private TextBox textBox1;
+        private GroupBox inputBox;
+        private TextBox caloriesBurnedTextBox;
+        private TextBox activitiesTextBox;
+        private Label activitiesLabel;
+        private Label caloriesBurnedLabel;
+        private Button deleteButton;
+        private Button editButton;
         private Button addButton;
-        private Label label4;
-        private Label label3;
-        private Label label5;
-        private TextBox textBox2;
-        private Button button1;
+        private DataGridView dayOneView;
+        private DataGridView dayTwoView;
+        private DataGridView dayThreeView;
+        private DataGridView dayFourView;
+        private DataGridView dayFiveView;
+        private DataGridView daySixView;
+        private DataGridView daySevenView;
         private Button mainMenuButton;
+        private Label managerLabel;
     }
 }

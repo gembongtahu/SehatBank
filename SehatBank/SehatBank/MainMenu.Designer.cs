@@ -28,25 +28,25 @@
         /// </summary>
         private void InitializeComponent()
         {
-            label1 = new Label();
+            mainMenuLabel = new Label();
             quitButton = new Button();
             caloriesManagerButton = new Button();
             activitiesManagerButton = new Button();
             databaseButton = new Button();
             SuspendLayout();
             // 
-            // label1
+            // mainMenuLabel
             // 
-            label1.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
-            label1.AutoSize = true;
-            label1.Font = new Font("Heebo", 48F, FontStyle.Regular, GraphicsUnit.Point);
-            label1.ForeColor = SystemColors.ButtonHighlight;
-            label1.Location = new Point(239, 102);
-            label1.Name = "label1";
-            label1.Size = new Size(358, 94);
-            label1.TabIndex = 0;
-            label1.Text = "Main Menu";
-            label1.TextAlign = ContentAlignment.MiddleCenter;
+            mainMenuLabel.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
+            mainMenuLabel.AutoSize = true;
+            mainMenuLabel.Font = new Font("Heebo", 48F, FontStyle.Regular, GraphicsUnit.Point);
+            mainMenuLabel.ForeColor = SystemColors.ButtonHighlight;
+            mainMenuLabel.Location = new Point(239, 102);
+            mainMenuLabel.Name = "mainMenuLabel";
+            mainMenuLabel.Size = new Size(358, 94);
+            mainMenuLabel.TabIndex = 0;
+            mainMenuLabel.Text = "Main Menu";
+            mainMenuLabel.TextAlign = ContentAlignment.MiddleCenter;
             // 
             // quitButton
             // 
@@ -106,16 +106,18 @@
             Controls.Add(activitiesManagerButton);
             Controls.Add(caloriesManagerButton);
             Controls.Add(quitButton);
-            Controls.Add(label1);
+            Controls.Add(mainMenuLabel);
             Name = "MainMenu";
             Text = "MainMenu";
+            Load += MainMenu_Load;
+            Resize += MainMenu_Resize;
             ResumeLayout(false);
             PerformLayout();
         }
 
         #endregion
 
-        private Label label1;
+        private Label mainMenuLabel;
         private Button quitButton;
         private Button caloriesManagerButton;
         private Button activitiesManagerButton;
