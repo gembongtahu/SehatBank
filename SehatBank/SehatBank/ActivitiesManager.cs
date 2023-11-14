@@ -30,9 +30,18 @@ namespace SehatBank
         List<DataGridView> dataGridList = new List<DataGridView>();
         List<DataTable> dataTableList = new List<DataTable>();
         List<string> sqlCommandList = new List<string>();
+        List<string> activitiesList = new List<string>();
+
         public ActivitiesManager()
         {
             InitializeComponent();
+            activitiesList = Activities.GetActivitiesList();
+            foreach (string activity in activitiesList)
+            {
+                activitiesTextBox.AutoCompleteCustomSource.Add(activity);
+                activitiesTextBox.AutoCompleteMode = AutoCompleteMode.SuggestAppend;
+                activitiesTextBox.AutoCompleteSource = AutoCompleteSource.CustomSource;
+            }
         }
 
         private void mainMenuButton_Click(object sender, EventArgs e)

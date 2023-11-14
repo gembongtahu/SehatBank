@@ -30,10 +30,18 @@ namespace SehatBank
         List<DataGridView> dataGridList = new List<DataGridView>();
         List<DataTable> dataTableList = new List<DataTable>();
         List<string> sqlCommandList = new List<string>();
+        List<string> foodList = new List<string>();
 
         public CaloriesManager()
         {
             InitializeComponent();
+            foodList = Food.GetFoodList();
+            foreach(string food in foodList)
+            {
+                foodTextBox.AutoCompleteCustomSource.Add(food);
+                foodTextBox.AutoCompleteMode = AutoCompleteMode.SuggestAppend;
+                foodTextBox.AutoCompleteSource = AutoCompleteSource.CustomSource;
+            }
         }
 
         private void mainMenuButton_Click(object sender, EventArgs e)
