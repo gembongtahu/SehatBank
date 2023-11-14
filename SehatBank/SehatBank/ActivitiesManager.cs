@@ -83,13 +83,13 @@ namespace SehatBank
             dataTableList.Add(dtFive);
             dataTableList.Add(dtSix);
             dataTableList.Add(dtSeven);
-            sqlCommandList.Add("");
-            sqlCommandList.Add("");
-            sqlCommandList.Add("");
-            sqlCommandList.Add("");
-            sqlCommandList.Add("");
-            sqlCommandList.Add("");
-            sqlCommandList.Add("");
+            sqlCommandList.Add("SELECT al.activities_list_id, users.user_name, activities.activities_name, activities.calories_burned\r\nFROM activities_list al\r\nJOIN users ON al.user_id = users.user_id\r\nJOIN activities ON al.activities_id = activities.activities_id\r\nWHERE al.date = current_date\r\nORDER BY al.activities_list_id;");
+            sqlCommandList.Add("SELECT al.activities_list_id, users.user_name, activities.activities_name, activities.calories_burned\r\nFROM activities_list al\r\nJOIN users ON al.user_id = users.user_id\r\nJOIN activities ON al.activities_id = activities.activities_id\r\nWHERE al.date = current_date - 1\r\nORDER BY al.activities_list_id;");
+            sqlCommandList.Add("SELECT al.activities_list_id, users.user_name, activities.activities_name, activities.calories_burned\r\nFROM activities_list al\r\nJOIN users ON al.user_id = users.user_id\r\nJOIN activities ON al.activities_id = activities.activities_id\r\nWHERE al.date = current_date - 2\r\nORDER BY al.activities_list_id;");
+            sqlCommandList.Add("SELECT al.activities_list_id, users.user_name, activities.activities_name, activities.calories_burned\r\nFROM activities_list al\r\nJOIN users ON al.user_id = users.user_id\r\nJOIN activities ON al.activities_id = activities.activities_id\r\nWHERE al.date = current_date - 3\r\nORDER BY al.activities_list_id;");
+            sqlCommandList.Add("SELECT al.activities_list_id, users.user_name, activities.activities_name, activities.calories_burned\r\nFROM activities_list al\r\nJOIN users ON al.user_id = users.user_id\r\nJOIN activities ON al.activities_id = activities.activities_id\r\nWHERE al.date = current_date - 4\r\nORDER BY al.activities_list_id;");
+            sqlCommandList.Add("SELECT al.activities_list_id, users.user_name, activities.activities_name, activities.calories_burned\r\nFROM activities_list al\r\nJOIN users ON al.user_id = users.user_id\r\nJOIN activities ON al.activities_id = activities.activities_id\r\nWHERE al.date = current_date - 5\r\nORDER BY al.activities_list_id;");
+            sqlCommandList.Add("SELECT al.activities_list_id, users.user_name, activities.activities_name, activities.calories_burned\r\nFROM activities_list al\r\nJOIN users ON al.user_id = users.user_id\r\nJOIN activities ON al.activities_id = activities.activities_id\r\nWHERE al.date = current_date - 6\r\nORDER BY al.activities_list_id;");
         }
 
         private void ActivitiesManager_Resize(object sender, EventArgs e)

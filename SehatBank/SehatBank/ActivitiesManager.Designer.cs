@@ -184,7 +184,7 @@
             // 
             // dayFourView
             // 
-            dayFourView.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.AllCells;
+            dayFourView.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
             dayFourView.AutoSizeRowsMode = DataGridViewAutoSizeRowsMode.AllCells;
             dayFourView.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             dayFourView.Location = new Point(353, 137);
