@@ -8,7 +8,7 @@ namespace SehatBank
 {
     public static class UserSession
     {
-        public static int UserId { get; private set; }
+        public static int UserId = 0;
 
         public static void SetUserId(int userId)
         {

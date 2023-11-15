@@ -9,6 +9,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement.Window;
 
 namespace SehatBank
 {
@@ -16,19 +17,17 @@ namespace SehatBank
     {
         private NpgsqlConnection con;
         string constring = "Host=localhost;Port=5432;Username=postgres;Password=admin;Database=SehatBank";
-        public DataTable dtOne, dtTwo, dtThree, dtFour, dtFive, dtSix, dtSeven;
+        public DataTable dt;
         public static NpgsqlCommand cmd;
         private string sql = null;
         private DataGridViewRow r;
-        private Rectangle mmButton, aButton, eButton, dButton, originalSize, sButton;
+        private Rectangle mmButton, aButton, eButton, dButton, originalSize;
         private Rectangle daySeven, daySix, dayFive, dayFour, dayThree, dayTwo, dayOne;
         private Rectangle mLabel, fLabel, cLabel;
         private Rectangle fTextBox, cTextBox;
         private Rectangle iBox;
         private Font mFont, fFont, cFont;
         Resize resize = new Resize();
-        List<DataGridView> dataGridList = new List<DataGridView>();
-        List<DataTable> dataTableList = new List<DataTable>();
         List<string> sqlCommandList = new List<string>();
         List<string> foodList = new List<string>();
 
@@ -36,7 +35,7 @@ namespace SehatBank
         {
             InitializeComponent();
             foodList = Food.GetFoodList();
-            foreach(string food in foodList)
+            foreach (string food in foodList)
             {
                 foodTextBox.AutoCompleteCustomSource.Add(food);
                 foodTextBox.AutoCompleteMode = AutoCompleteMode.SuggestAppend;
@@ -57,14 +56,13 @@ namespace SehatBank
             aButton = addButton.Bounds;
             eButton = editButton.Bounds;
             dButton = deleteButton.Bounds;
-            sButton = showButton.Bounds;
-            daySeven = daySevenView.Bounds;
-            dayFive = dayFiveView.Bounds;
-            daySix = daySixView.Bounds;
-            dayOne = dayOneView.Bounds;
-            dayTwo = dayTwoView.Bounds;
-            dayThree = dayThreeView.Bounds;
-            dayFour = dayFourView.Bounds;
+            daySeven = daySevenButton.Bounds;
+            dayFive = dayFiveButton.Bounds;
+            daySix = daySixButton.Bounds;
+            dayOne = dayOneButton.Bounds;
+            dayTwo = dayTwoButton.Bounds;
+            dayThree = dayThreeButton.Bounds;
+            dayFour = dayFourButton.Bounds;
             mLabel = managerLabel.Bounds;
             fLabel = foodLabel.Bounds;
             cLabel = caloriesLabel.Bounds;
@@ -74,27 +72,13 @@ namespace SehatBank
             mFont = managerLabel.Font;
             fFont = foodLabel.Font;
             cFont = caloriesLabel.Font;
-            dataGridList.Add(dayOneView);
-            dataGridList.Add(dayTwoView);
-            dataGridList.Add(dayThreeView);
-            dataGridList.Add(dayFourView);
-            dataGridList.Add(dayFiveView);
-            dataGridList.Add(daySixView);
-            dataGridList.Add(daySevenView);
-            dataTableList.Add(dtOne);
-            dataTableList.Add(dtTwo);
-            dataTableList.Add(dtThree);
-            dataTableList.Add(dtFour);
-            dataTableList.Add(dtFive);
-            dataTableList.Add(dtSix);
-            dataTableList.Add(dtSeven);
-            sqlCommandList.Add("SELECT cil.calories_intake_id, users.user_name, food.food_name, food.calories\r\nFROM calories_intake_list cil\r\nJOIN users ON cil.user_id = users.user_id\r\nJOIN food ON cil.food_id = food.food_id\r\nWHERE cil.date = current_date\r\nORDER BY cil.calories_intake_id;\r\n\r\n");
-            sqlCommandList.Add("SELECT cil.calories_intake_id, users.user_name, food.food_name, food.calories\r\nFROM calories_intake_list cil\r\nJOIN users ON cil.user_id = users.user_id\r\nJOIN food ON cil.food_id = food.food_id\r\nWHERE cil.date = current_date - 1\r\nORDER BY cil.calories_intake_id;\r\n\r\n");
-            sqlCommandList.Add("SELECT cil.calories_intake_id, users.user_name, food.food_name, food.calories\r\nFROM calories_intake_list cil\r\nJOIN users ON cil.user_id = users.user_id\r\nJOIN food ON cil.food_id = food.food_id\r\nWHERE cil.date = current_date - 2\r\nORDER BY cil.calories_intake_id;\r\n\r\n");
-            sqlCommandList.Add("SELECT cil.calories_intake_id, users.user_name, food.food_name, food.calories\r\nFROM calories_intake_list cil\r\nJOIN users ON cil.user_id = users.user_id\r\nJOIN food ON cil.food_id = food.food_id\r\nWHERE cil.date = current_date - 3\r\nORDER BY cil.calories_intake_id;\r\n\r\n");
-            sqlCommandList.Add("SELECT cil.calories_intake_id, users.user_name, food.food_name, food.calories\r\nFROM calories_intake_list cil\r\nJOIN users ON cil.user_id = users.user_id\r\nJOIN food ON cil.food_id = food.food_id\r\nWHERE cil.date = current_date - 4\r\nORDER BY cil.calories_intake_id;\r\n\r\n");
-            sqlCommandList.Add("SELECT cil.calories_intake_id, users.user_name, food.food_name, food.calories\r\nFROM calories_intake_list cil\r\nJOIN users ON cil.user_id = users.user_id\r\nJOIN food ON cil.food_id = food.food_id\r\nWHERE cil.date = current_date - 5\r\nORDER BY cil.calories_intake_id;\r\n\r\n");
-            sqlCommandList.Add("SELECT cil.calories_intake_id, users.user_name, food.food_name, food.calories\r\nFROM calories_intake_list cil\r\nJOIN users ON cil.user_id = users.user_id\r\nJOIN food ON cil.food_id = food.food_id\r\nWHERE cil.date = current_date - 6\r\nORDER BY cil.calories_intake_id;\r\n\r\n");
+            sqlCommandList.Add("SELECT cil.calories_intake_id, users.user_name, food.food_name, food.calories\r\nFROM calories_intake_list cil\r\nJOIN users ON cil.user_id = users.user_id\r\nJOIN food ON cil.food_id = food.food_id\r\nWHERE cil.date = current_date and cil.user_id = @userID\r\nORDER BY cil.calories_intake_id;\r\n\r\n");
+            sqlCommandList.Add("SELECT cil.calories_intake_id, users.user_name, food.food_name, food.calories\r\nFROM calories_intake_list cil\r\nJOIN users ON cil.user_id = users.user_id\r\nJOIN food ON cil.food_id = food.food_id\r\nWHERE cil.date = current_date - 1 and cil.user_id = @userID\r\nORDER BY cil.calories_intake_id;\r\n\r\n");
+            sqlCommandList.Add("SELECT cil.calories_intake_id, users.user_name, food.food_name, food.calories\r\nFROM calories_intake_list cil\r\nJOIN users ON cil.user_id = users.user_id\r\nJOIN food ON cil.food_id = food.food_id\r\nWHERE cil.date = current_date - 2 and cil.user_id = @userID\r\nORDER BY cil.calories_intake_id;\r\n\r\n");
+            sqlCommandList.Add("SELECT cil.calories_intake_id, users.user_name, food.food_name, food.calories\r\nFROM calories_intake_list cil\r\nJOIN users ON cil.user_id = users.user_id\r\nJOIN food ON cil.food_id = food.food_id\r\nWHERE cil.date = current_date - 3 and cil.user_id = @userID\r\nORDER BY cil.calories_intake_id;\r\n\r\n");
+            sqlCommandList.Add("SELECT cil.calories_intake_id, users.user_name, food.food_name, food.calories\r\nFROM calories_intake_list cil\r\nJOIN users ON cil.user_id = users.user_id\r\nJOIN food ON cil.food_id = food.food_id\r\nWHERE cil.date = current_date - 4 and cil.user_id = @userID\r\nORDER BY cil.calories_intake_id;\r\n\r\n");
+            sqlCommandList.Add("SELECT cil.calories_intake_id, users.user_name, food.food_name, food.calories\r\nFROM calories_intake_list cil\r\nJOIN users ON cil.user_id = users.user_id\r\nJOIN food ON cil.food_id = food.food_id\r\nWHERE cil.date = current_date - 5 and cil.user_id = @userID\r\nORDER BY cil.calories_intake_id;\r\n\r\n");
+            sqlCommandList.Add("SELECT cil.calories_intake_id, users.user_name, food.food_name, food.calories\r\nFROM calories_intake_list cil\r\nJOIN users ON cil.user_id = users.user_id\r\nJOIN food ON cil.food_id = food.food_id\r\nWHERE cil.date = current_date - 6 and cil.user_id = @userID\r\nORDER BY cil.calories_intake_id;\r\n\r\n");
         }
 
         private void CaloriesManager_Resize(object sender, EventArgs e)
@@ -103,14 +87,13 @@ namespace SehatBank
             resize.resizeControl(aButton, addButton, originalSize, this.Width, this.Height);
             resize.resizeControl(eButton, editButton, originalSize, this.Width, this.Height);
             resize.resizeControl(dButton, deleteButton, originalSize, this.Width, this.Height);
-            resize.resizeControl(sButton, showButton, originalSize, this.Width, this.Height);
-            resize.resizeControl(dayOne, dayOneView, originalSize, this.Width, this.Height);
-            resize.resizeControl(dayTwo, dayTwoView, originalSize, this.Width, this.Height);
-            resize.resizeControl(dayThree, dayThreeView, originalSize, this.Width, this.Height);
-            resize.resizeControl(dayFour, dayFourView, originalSize, this.Width, this.Height);
-            resize.resizeControl(dayFive, dayFiveView, originalSize, this.Width, this.Height);
-            resize.resizeControl(daySix, daySixView, originalSize, this.Width, this.Height);
-            resize.resizeControl(daySeven, daySevenView, originalSize, this.Width, this.Height);
+            resize.resizeControl(dayOne, dayOneButton, originalSize, this.Width, this.Height);
+            resize.resizeControl(dayTwo, dayTwoButton, originalSize, this.Width, this.Height);
+            resize.resizeControl(dayThree, dayThreeButton, originalSize, this.Width, this.Height);
+            resize.resizeControl(dayFour, dayFourButton, originalSize, this.Width, this.Height);
+            resize.resizeControl(dayFive, dayFiveButton, originalSize, this.Width, this.Height);
+            resize.resizeControl(daySix, daySixButton, originalSize, this.Width, this.Height);
+            resize.resizeControl(daySeven, daySevenButton, originalSize, this.Width, this.Height);
             resize.resizeControl(mLabel, managerLabel, originalSize, this.Width, this.Height);
             resize.resizeControl(fLabel, foodLabel, originalSize, this.Width, this.Height);
             resize.resizeControl(cLabel, caloriesLabel, originalSize, this.Width, this.Height);
@@ -125,6 +108,27 @@ namespace SehatBank
         private void addButton_Click(object sender, EventArgs e)
         {
             int foodId = Food.GetFoodId(foodTextBox.Text);
+            int userId = UserSession.UserId;
+            try
+            {
+                con.Open();
+                sql = "select * from ct_insert(:_user_id, :_food_id)";
+                cmd = new NpgsqlCommand(sql, con);
+                cmd.Parameters.AddWithValue("_food_id", foodId.ToString());
+                cmd.Parameters.AddWithValue("_user_id", userId.ToString());
+                object result = cmd.ExecuteScalar();
+                if (result != null)
+                {
+                    MessageBox.Show("Insert Sukses");
+                    foodTextBox.Text = null;
+                }
+                con.Close();
+                dayOneButton.PerformClick();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error: " + ex.Message, "FAIL!!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
 
         private void editButton_Click(object sender, EventArgs e)
@@ -144,24 +148,153 @@ namespace SehatBank
 
         private void showButton_Click(object sender, EventArgs e)
         {
-            for (int i = 0; i < 7; i++)
+
+        }
+
+        private void dayOneButton_Click(object sender, EventArgs e)
+        {
+            try
             {
-                try
-                {
-                    con.Open();
-                    dataTableList[i] = null;
-                    sql = sqlCommandList[i];
-                    cmd = new NpgsqlCommand(sql, con);
-                    dataTableList[i] = new DataTable();
-                    NpgsqlDataReader rd = cmd.ExecuteReader();
-                    dataTableList[i].Load(rd);
-                    dataGridList[i].DataSource = dataTableList[i];
-                    con.Close();
-                }
-                catch (Exception ex)
-                {
-                    MessageBox.Show("Error: " + ex.Message, "FAIL!!", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                }
+                con.Open();
+                dt = null;
+                sql = sqlCommandList[0];
+                cmd = new NpgsqlCommand(sql, con);
+                cmd.Parameters.AddWithValue("@userID", UserSession.UserId.ToString());
+                dt = new DataTable();
+                NpgsqlDataReader rd = cmd.ExecuteReader();
+                dt.Load(rd);
+                dataView.DataSource = dt;
+                con.Close();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error: " + ex.Message, "FAIL!!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        private void dayTwoButton_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                con.Open();
+                dt = null;
+                sql = sqlCommandList[1];
+                cmd = new NpgsqlCommand(sql, con);
+                cmd.Parameters.AddWithValue("@userID", UserSession.UserId.ToString());
+                dt = new DataTable();
+                NpgsqlDataReader rd = cmd.ExecuteReader();
+                dt.Load(rd);
+                dataView.DataSource = dt;
+                con.Close();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error: " + ex.Message, "FAIL!!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        private void dayThreeButton_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                con.Open();
+                dt = null;
+                sql = sqlCommandList[2];
+                cmd = new NpgsqlCommand(sql, con);
+                cmd.Parameters.AddWithValue("@userID", UserSession.UserId.ToString());
+                dt = new DataTable();
+                NpgsqlDataReader rd = cmd.ExecuteReader();
+                dt.Load(rd);
+                dataView.DataSource = dt;
+                con.Close();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error: " + ex.Message, "FAIL!!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        private void dayFourButton_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                con.Open();
+                dt = null;
+                sql = sqlCommandList[3];
+                cmd = new NpgsqlCommand(sql, con);
+                cmd.Parameters.AddWithValue("@userID", UserSession.UserId.ToString());
+                dt = new DataTable();
+                NpgsqlDataReader rd = cmd.ExecuteReader();
+                dt.Load(rd);
+                dataView.DataSource = dt;
+                con.Close();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error: " + ex.Message, "FAIL!!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        private void dayFiveButton_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                con.Open();
+                dt = null;
+                sql = sqlCommandList[4];
+                cmd = new NpgsqlCommand(sql, con);
+                cmd.Parameters.AddWithValue("@userID", UserSession.UserId.ToString());
+                dt = new DataTable();
+                NpgsqlDataReader rd = cmd.ExecuteReader();
+                dt.Load(rd);
+                dataView.DataSource = dt;
+                con.Close();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error: " + ex.Message, "FAIL!!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        private void daySixButton_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                con.Open();
+                dt = null;
+                sql = sqlCommandList[5];
+                cmd = new NpgsqlCommand(sql, con);
+                cmd.Parameters.AddWithValue("@userID", UserSession.UserId.ToString());
+                dt = new DataTable();
+                NpgsqlDataReader rd = cmd.ExecuteReader();
+                dt.Load(rd);
+                dataView.DataSource = dt;
+                con.Close();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error: " + ex.Message, "FAIL!!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        private void daySevenButton_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                con.Open();
+                dt = null;
+                sql = sqlCommandList[6];
+                cmd = new NpgsqlCommand(sql, con);
+                cmd.Parameters.AddWithValue("@userID", UserSession.UserId.ToString());
+                dt = new DataTable();
+                NpgsqlDataReader rd = cmd.ExecuteReader();
+                dt.Load(rd);
+                dataView.DataSource = dt;
+                con.Close();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error: " + ex.Message, "FAIL!!", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
     }

@@ -36,24 +36,18 @@
             caloriesLabel = new Label();
             editButton = new Button();
             deleteButton = new Button();
-            daySevenView = new DataGridView();
             mainMenuButton = new Button();
-            daySixView = new DataGridView();
-            dayFiveView = new DataGridView();
-            dayFourView = new DataGridView();
-            dayThreeView = new DataGridView();
-            dayTwoView = new DataGridView();
-            dayOneView = new DataGridView();
             inputBox = new GroupBox();
-            showButton = new Button();
-            ((System.ComponentModel.ISupportInitialize)daySevenView).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)daySixView).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)dayFiveView).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)dayFourView).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)dayThreeView).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)dayTwoView).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)dayOneView).BeginInit();
+            daySevenButton = new Button();
+            daySixButton = new Button();
+            dayFiveButton = new Button();
+            dayFourButton = new Button();
+            dayThreeButton = new Button();
+            dayTwoButton = new Button();
+            dayOneButton = new Button();
+            dataView = new DataGridView();
             inputBox.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)dataView).BeginInit();
             SuspendLayout();
             // 
             // managerLabel
@@ -148,17 +142,6 @@
             deleteButton.UseVisualStyleBackColor = false;
             deleteButton.Click += deleteButton_Click;
             // 
-            // daySevenView
-            // 
-            daySevenView.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
-            daySevenView.AutoSizeRowsMode = DataGridViewAutoSizeRowsMode.AllCells;
-            daySevenView.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            daySevenView.Location = new Point(51, 122);
-            daySevenView.Name = "daySevenView";
-            daySevenView.RowTemplate.Height = 25;
-            daySevenView.Size = new Size(94, 241);
-            daySevenView.TabIndex = 6;
-            // 
             // mainMenuButton
             // 
             mainMenuButton.BackColor = Color.DimGray;
@@ -170,72 +153,6 @@
             mainMenuButton.Text = "Main Menu";
             mainMenuButton.UseVisualStyleBackColor = false;
             mainMenuButton.Click += mainMenuButton_Click;
-            // 
-            // daySixView
-            // 
-            daySixView.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
-            daySixView.AutoSizeRowsMode = DataGridViewAutoSizeRowsMode.AllCells;
-            daySixView.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            daySixView.Location = new Point(151, 122);
-            daySixView.Name = "daySixView";
-            daySixView.RowTemplate.Height = 25;
-            daySixView.Size = new Size(94, 241);
-            daySixView.TabIndex = 7;
-            // 
-            // dayFiveView
-            // 
-            dayFiveView.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
-            dayFiveView.AutoSizeRowsMode = DataGridViewAutoSizeRowsMode.AllCells;
-            dayFiveView.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dayFiveView.Location = new Point(251, 122);
-            dayFiveView.Name = "dayFiveView";
-            dayFiveView.RowTemplate.Height = 25;
-            dayFiveView.Size = new Size(94, 241);
-            dayFiveView.TabIndex = 8;
-            // 
-            // dayFourView
-            // 
-            dayFourView.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
-            dayFourView.AutoSizeRowsMode = DataGridViewAutoSizeRowsMode.AllCells;
-            dayFourView.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dayFourView.Location = new Point(351, 122);
-            dayFourView.Name = "dayFourView";
-            dayFourView.RowTemplate.Height = 25;
-            dayFourView.Size = new Size(94, 241);
-            dayFourView.TabIndex = 9;
-            // 
-            // dayThreeView
-            // 
-            dayThreeView.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
-            dayThreeView.AutoSizeRowsMode = DataGridViewAutoSizeRowsMode.AllCells;
-            dayThreeView.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dayThreeView.Location = new Point(451, 122);
-            dayThreeView.Name = "dayThreeView";
-            dayThreeView.RowTemplate.Height = 25;
-            dayThreeView.Size = new Size(94, 241);
-            dayThreeView.TabIndex = 10;
-            // 
-            // dayTwoView
-            // 
-            dayTwoView.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
-            dayTwoView.AutoSizeRowsMode = DataGridViewAutoSizeRowsMode.AllCells;
-            dayTwoView.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dayTwoView.Location = new Point(551, 122);
-            dayTwoView.Name = "dayTwoView";
-            dayTwoView.RowTemplate.Height = 25;
-            dayTwoView.Size = new Size(94, 241);
-            dayTwoView.TabIndex = 11;
-            // 
-            // dayOneView
-            // 
-            dayOneView.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
-            dayOneView.AutoSizeRowsMode = DataGridViewAutoSizeRowsMode.AllCells;
-            dayOneView.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dayOneView.Location = new Point(651, 122);
-            dayOneView.Name = "dayOneView";
-            dayOneView.RowTemplate.Height = 25;
-            dayOneView.Size = new Size(94, 241);
-            dayOneView.TabIndex = 12;
             // 
             // inputBox
             // 
@@ -255,18 +172,107 @@
             inputBox.Text = "Input Here";
             inputBox.Enter += inputBox_Enter;
             // 
-            // showButton
+            // daySevenButton
             // 
-            showButton.AutoSizeMode = AutoSizeMode.GrowAndShrink;
-            showButton.BackColor = Color.DimGray;
-            showButton.ForeColor = SystemColors.ButtonHighlight;
-            showButton.Location = new Point(45, 403);
-            showButton.Name = "showButton";
-            showButton.Size = new Size(109, 23);
-            showButton.TabIndex = 18;
-            showButton.Text = "Show All";
-            showButton.UseVisualStyleBackColor = false;
-            showButton.Click += showButton_Click;
+            daySevenButton.AutoSizeMode = AutoSizeMode.GrowAndShrink;
+            daySevenButton.BackColor = Color.DimGray;
+            daySevenButton.ForeColor = SystemColors.ButtonHighlight;
+            daySevenButton.Location = new Point(51, 300);
+            daySevenButton.Name = "daySevenButton";
+            daySevenButton.Size = new Size(99, 23);
+            daySevenButton.TabIndex = 43;
+            daySevenButton.Text = "Day Seven";
+            daySevenButton.UseVisualStyleBackColor = false;
+            daySevenButton.Click += daySevenButton_Click;
+            // 
+            // daySixButton
+            // 
+            daySixButton.AutoSizeMode = AutoSizeMode.GrowAndShrink;
+            daySixButton.BackColor = Color.DimGray;
+            daySixButton.ForeColor = SystemColors.ButtonHighlight;
+            daySixButton.Location = new Point(51, 271);
+            daySixButton.Name = "daySixButton";
+            daySixButton.Size = new Size(99, 23);
+            daySixButton.TabIndex = 42;
+            daySixButton.Text = "Day Six";
+            daySixButton.UseVisualStyleBackColor = false;
+            daySixButton.Click += daySixButton_Click;
+            // 
+            // dayFiveButton
+            // 
+            dayFiveButton.AutoSizeMode = AutoSizeMode.GrowAndShrink;
+            dayFiveButton.BackColor = Color.DimGray;
+            dayFiveButton.ForeColor = SystemColors.ButtonHighlight;
+            dayFiveButton.Location = new Point(51, 242);
+            dayFiveButton.Name = "dayFiveButton";
+            dayFiveButton.Size = new Size(99, 23);
+            dayFiveButton.TabIndex = 41;
+            dayFiveButton.Text = "Day Five";
+            dayFiveButton.UseVisualStyleBackColor = false;
+            dayFiveButton.Click += dayFiveButton_Click;
+            // 
+            // dayFourButton
+            // 
+            dayFourButton.AutoSizeMode = AutoSizeMode.GrowAndShrink;
+            dayFourButton.BackColor = Color.DimGray;
+            dayFourButton.ForeColor = SystemColors.ButtonHighlight;
+            dayFourButton.Location = new Point(51, 213);
+            dayFourButton.Name = "dayFourButton";
+            dayFourButton.Size = new Size(99, 23);
+            dayFourButton.TabIndex = 40;
+            dayFourButton.Text = "Day Four";
+            dayFourButton.UseVisualStyleBackColor = false;
+            dayFourButton.Click += dayFourButton_Click;
+            // 
+            // dayThreeButton
+            // 
+            dayThreeButton.AutoSizeMode = AutoSizeMode.GrowAndShrink;
+            dayThreeButton.BackColor = Color.DimGray;
+            dayThreeButton.ForeColor = SystemColors.ButtonHighlight;
+            dayThreeButton.Location = new Point(51, 184);
+            dayThreeButton.Name = "dayThreeButton";
+            dayThreeButton.Size = new Size(99, 23);
+            dayThreeButton.TabIndex = 39;
+            dayThreeButton.Text = "Day Three";
+            dayThreeButton.UseVisualStyleBackColor = false;
+            dayThreeButton.Click += dayThreeButton_Click;
+            // 
+            // dayTwoButton
+            // 
+            dayTwoButton.AutoSizeMode = AutoSizeMode.GrowAndShrink;
+            dayTwoButton.BackColor = Color.DimGray;
+            dayTwoButton.ForeColor = SystemColors.ButtonHighlight;
+            dayTwoButton.Location = new Point(51, 155);
+            dayTwoButton.Name = "dayTwoButton";
+            dayTwoButton.Size = new Size(99, 23);
+            dayTwoButton.TabIndex = 38;
+            dayTwoButton.Text = "Day Two";
+            dayTwoButton.UseVisualStyleBackColor = false;
+            dayTwoButton.Click += dayTwoButton_Click;
+            // 
+            // dayOneButton
+            // 
+            dayOneButton.AutoSizeMode = AutoSizeMode.GrowAndShrink;
+            dayOneButton.BackColor = Color.DimGray;
+            dayOneButton.ForeColor = SystemColors.ButtonHighlight;
+            dayOneButton.Location = new Point(51, 126);
+            dayOneButton.Name = "dayOneButton";
+            dayOneButton.Size = new Size(99, 23);
+            dayOneButton.TabIndex = 37;
+            dayOneButton.Text = "Day One";
+            dayOneButton.UseVisualStyleBackColor = false;
+            dayOneButton.Click += dayOneButton_Click;
+            // 
+            // dataView
+            // 
+            dataView.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+            dataView.AutoSizeRowsMode = DataGridViewAutoSizeRowsMode.AllCells;
+            dataView.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dataView.Location = new Point(156, 105);
+            dataView.Name = "dataView";
+            dataView.RowTemplate.Height = 25;
+            dataView.Size = new Size(594, 241);
+            dataView.TabIndex = 36;
             // 
             // CaloriesManager
             // 
@@ -274,30 +280,24 @@
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.DimGray;
             ClientSize = new Size(800, 450);
-            Controls.Add(showButton);
+            Controls.Add(daySevenButton);
+            Controls.Add(daySixButton);
+            Controls.Add(dayFiveButton);
+            Controls.Add(dayFourButton);
+            Controls.Add(dayThreeButton);
+            Controls.Add(dayTwoButton);
+            Controls.Add(dayOneButton);
+            Controls.Add(dataView);
             Controls.Add(inputBox);
-            Controls.Add(dayOneView);
-            Controls.Add(dayTwoView);
-            Controls.Add(dayThreeView);
-            Controls.Add(dayFourView);
-            Controls.Add(dayFiveView);
-            Controls.Add(daySixView);
-            Controls.Add(daySevenView);
             Controls.Add(mainMenuButton);
             Controls.Add(managerLabel);
             Name = "CaloriesManager";
             Text = "CaloriesManager";
             Load += CaloriesManager_Load;
             Resize += CaloriesManager_Resize;
-            ((System.ComponentModel.ISupportInitialize)daySevenView).EndInit();
-            ((System.ComponentModel.ISupportInitialize)daySixView).EndInit();
-            ((System.ComponentModel.ISupportInitialize)dayFiveView).EndInit();
-            ((System.ComponentModel.ISupportInitialize)dayFourView).EndInit();
-            ((System.ComponentModel.ISupportInitialize)dayThreeView).EndInit();
-            ((System.ComponentModel.ISupportInitialize)dayTwoView).EndInit();
-            ((System.ComponentModel.ISupportInitialize)dayOneView).EndInit();
             inputBox.ResumeLayout(false);
             inputBox.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)dataView).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -312,15 +312,15 @@
         private Label caloriesLabel;
         private Button editButton;
         private Button deleteButton;
-        private DataGridView daySevenView;
         private Button mainMenuButton;
-        private DataGridView daySixView;
-        private DataGridView dayFiveView;
-        private DataGridView dayFourView;
-        private DataGridView dayThreeView;
-        private DataGridView dayTwoView;
-        private DataGridView dayOneView;
         private GroupBox inputBox;
-        private Button showButton;
+        private Button daySevenButton;
+        private Button daySixButton;
+        private Button dayFiveButton;
+        private Button dayFourButton;
+        private Button dayThreeButton;
+        private Button dayTwoButton;
+        private Button dayOneButton;
+        private DataGridView dataView;
     }
 }
