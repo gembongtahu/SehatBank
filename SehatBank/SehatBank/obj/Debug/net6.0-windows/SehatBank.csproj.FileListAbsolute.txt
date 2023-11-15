@@ -27,3 +27,5 @@ C:\Users\thori\source\repos\goodguythor\SehatBank\SehatBank\SehatBank\bin\Debug\
 C:\Users\thori\source\repos\goodguythor\SehatBank\SehatBank\SehatBank\bin\Debug\net6.0-windows\Npgsql.dll
 C:\Users\thori\source\repos\goodguythor\SehatBank\SehatBank\SehatBank\obj\Debug\net6.0-windows\SehatBank.csproj.AssemblyReference.cache
 C:\Users\thori\source\repos\goodguythor\SehatBank\SehatBank\SehatBank\obj\Debug\net6.0-windows\SehatBank.csproj.CopyComplete
+C:\Users\thori\source\repos\goodguythor\SehatBank\SehatBank\SehatBank\obj\Debug\net6.0-windows\SehatBank.Login.resources
+C:\Users\thori\source\repos\goodguythor\SehatBank\SehatBank\SehatBank\obj\Debug\net6.0-windows\SehatBank.Register.resources
