@@ -37,6 +37,7 @@
             passwordLabel = new Label();
             registerButton = new Button();
             loginButton = new Button();
+            quitButton = new Button();
             inputBox.SuspendLayout();
             SuspendLayout();
             // 
@@ -149,12 +150,26 @@
             loginButton.UseVisualStyleBackColor = false;
             loginButton.Click += loginButton_Click;
             // 
+            // quitButton
+            // 
+            quitButton.AutoSizeMode = AutoSizeMode.GrowAndShrink;
+            quitButton.BackColor = Color.DimGray;
+            quitButton.ForeColor = SystemColors.ButtonHighlight;
+            quitButton.Location = new Point(702, 415);
+            quitButton.Name = "quitButton";
+            quitButton.Size = new Size(75, 23);
+            quitButton.TabIndex = 30;
+            quitButton.Text = "Quit";
+            quitButton.UseVisualStyleBackColor = false;
+            quitButton.Click += quitButton_Click;
+            // 
             // Login
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.DimGray;
             ClientSize = new Size(800, 450);
+            Controls.Add(quitButton);
             Controls.Add(inputBox);
             Controls.Add(welcomeLabel);
             Controls.Add(appNameLabel);
@@ -179,5 +194,6 @@
         private Label passwordLabel;
         private Button registerButton;
         private Button loginButton;
+        private Button quitButton;
     }
 }
