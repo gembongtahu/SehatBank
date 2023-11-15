@@ -20,7 +20,7 @@ namespace SehatBank
         public static NpgsqlCommand cmd;
         private string sql = null;
         private DataGridViewRow r;
-        private Rectangle mmButton, aButton, eButton, dButton, originalSize;
+        private Rectangle mmButton, aButton, eButton, dButton, originalSize, sButton;
         private Rectangle daySeven, daySix, dayFive, dayFour, dayThree, dayTwo, dayOne;
         private Rectangle mLabel, fLabel, cLabel;
         private Rectangle fTextBox, cTextBox;
@@ -57,6 +57,7 @@ namespace SehatBank
             aButton = addButton.Bounds;
             eButton = editButton.Bounds;
             dButton = deleteButton.Bounds;
+            sButton = showButton.Bounds;
             daySeven = daySevenView.Bounds;
             dayFive = dayFiveView.Bounds;
             daySix = daySixView.Bounds;
@@ -102,6 +103,7 @@ namespace SehatBank
             resize.resizeControl(aButton, addButton, originalSize, this.Width, this.Height);
             resize.resizeControl(eButton, editButton, originalSize, this.Width, this.Height);
             resize.resizeControl(dButton, deleteButton, originalSize, this.Width, this.Height);
+            resize.resizeControl(sButton, showButton, originalSize, this.Width, this.Height);
             resize.resizeControl(dayOne, dayOneView, originalSize, this.Width, this.Height);
             resize.resizeControl(dayTwo, dayTwoView, originalSize, this.Width, this.Height);
             resize.resizeControl(dayThree, dayThreeView, originalSize, this.Width, this.Height);
