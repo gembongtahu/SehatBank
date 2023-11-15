@@ -16,7 +16,7 @@ namespace SehatBank
 {
     public partial class Login : Form
     {
-        private Rectangle lButton, rButton, originalSize;
+        private Rectangle lButton, rButton, originalSize, qButton;
         private Rectangle aLabel, wLabel, uLabel, pLabel;
         private Rectangle uTextBox, pTextBox;
         private Rectangle iBox;
@@ -30,6 +30,7 @@ namespace SehatBank
         private void Login_Load(object sender, EventArgs e)
         {
             originalSize = this.Bounds;
+            qButton = quitButton.Bounds;
             rButton = registerButton.Bounds;
             lButton = loginButton.Bounds;
             uLabel = usernameLabel.Bounds;
@@ -55,9 +56,11 @@ namespace SehatBank
 
         private void loginButton_Click(object sender, EventArgs e)
         {
-            if (User.AuthenticateUser(usernameTextBox.Text, passwordTextBox.Text))
+            int userID = User.AuthenticateUser(usernameTextBox.Text, passwordTextBox.Text);
+            if (userID != 0)
             {
-                MessageBox.Show("Login Success");
+                UserSession.SetUserId(userID);
+                MessageBox.Show("Login Success with User ID = "+UserSession.UserId.ToString());
                 this.Hide();
                 MainMenu mainMenu = new MainMenu();
                 mainMenu.ShowDialog();
@@ -69,6 +72,7 @@ namespace SehatBank
         {
             resize.resizeControl(rButton, registerButton, originalSize, this.Width, this.Height);
             resize.resizeControl(lButton, loginButton, originalSize, this.Width, this.Height);
+            resize.resizeControl(qButton, quitButton, originalSize, this.Width, this.Height);
             resize.resizeControl(aLabel, appNameLabel, originalSize, this.Width, this.Height);
             resize.resizeControl(uLabel, usernameLabel, originalSize, this.Width, this.Height);
             resize.resizeControl(pLabel, passwordLabel, originalSize, this.Width, this.Height);
@@ -80,6 +84,11 @@ namespace SehatBank
             resize.resizeFont(wFont, welcomeLabel, originalSize, this.Height);
             resize.resizeFont(aFont, appNameLabel, originalSize, this.Height);
             resize.resizeControl(iBox, inputBox, originalSize, this.Width, this.Height);
+        }
+
+        private void quitButton_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
         }
     }
 }

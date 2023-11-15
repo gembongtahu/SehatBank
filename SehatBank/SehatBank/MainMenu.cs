@@ -74,5 +74,14 @@ namespace SehatBank
             resize.resizeControl(mmLabel, mainMenuLabel, originalSize, this.Width, this.Height);
             resize.resizeFont(mmFont, mainMenuLabel, originalSize, this.Height);
         }
+
+        private void logOutButton_Click(object sender, EventArgs e)
+        {
+            MessageBox.Show("Logout Sukses");
+            this.Hide();
+            UserSession.ClearUserId();
+            Login login = new Login();
+            login.ShowDialog();
+        }
     }
 }

@@ -9,7 +9,7 @@ namespace SehatBank
 {
     public class User
     {
-        public static bool AuthenticateUser(string username, string password)
+        public static int AuthenticateUser(string username, string password)
         {
             string constring = "Host=localhost;Port=5432;Username=postgres;Password=admin;Database=SehatBank";
             using (NpgsqlConnection connection = new NpgsqlConnection(constring))
@@ -26,13 +26,13 @@ namespace SehatBank
 
                         object result = command.ExecuteScalar();
 
-                        return result != null && result != DBNull.Value;
+                        return (result != null && result != DBNull.Value) ? Convert.ToInt32(result) : 0;
                     }
                 }
                 catch (Exception ex)
                 {
                     MessageBox.Show("Error: " + ex.Message);
-                    return false;
+                    return 0;
                 }
             }
         }

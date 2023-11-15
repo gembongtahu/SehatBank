@@ -33,6 +33,7 @@
             caloriesManagerButton = new Button();
             activitiesManagerButton = new Button();
             databaseButton = new Button();
+            logOutButton = new Button();
             SuspendLayout();
             // 
             // mainMenuLabel
@@ -96,12 +97,25 @@
             databaseButton.UseVisualStyleBackColor = false;
             databaseButton.Click += databaseButton_Click;
             // 
+            // logOutButton
+            // 
+            logOutButton.BackColor = Color.DimGray;
+            logOutButton.ForeColor = SystemColors.ButtonHighlight;
+            logOutButton.Location = new Point(109, 365);
+            logOutButton.Name = "logOutButton";
+            logOutButton.Size = new Size(75, 23);
+            logOutButton.TabIndex = 5;
+            logOutButton.Text = "Log Out";
+            logOutButton.UseVisualStyleBackColor = false;
+            logOutButton.Click += logOutButton_Click;
+            // 
             // MainMenu
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.DimGray;
             ClientSize = new Size(800, 450);
+            Controls.Add(logOutButton);
             Controls.Add(databaseButton);
             Controls.Add(activitiesManagerButton);
             Controls.Add(caloriesManagerButton);
@@ -122,5 +136,6 @@
         private Button caloriesManagerButton;
         private Button activitiesManagerButton;
         private Button databaseButton;
+        private Button logOutButton;
     }
 }
