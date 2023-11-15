@@ -30,6 +30,9 @@
         {
             registerLabel = new Label();
             inputBox = new GroupBox();
+            loginButton = new Button();
+            ageTextBox = new TextBox();
+            ageLabel = new Label();
             femaleButton = new RadioButton();
             maleButton = new RadioButton();
             genderLabel = new Label();
@@ -60,6 +63,9 @@
             // 
             // inputBox
             // 
+            inputBox.Controls.Add(loginButton);
+            inputBox.Controls.Add(ageTextBox);
+            inputBox.Controls.Add(ageLabel);
             inputBox.Controls.Add(femaleButton);
             inputBox.Controls.Add(maleButton);
             inputBox.Controls.Add(genderLabel);
@@ -80,10 +86,43 @@
             inputBox.TabStop = false;
             inputBox.Text = "Enter you identity here";
             // 
+            // loginButton
+            // 
+            loginButton.AutoSizeMode = AutoSizeMode.GrowAndShrink;
+            loginButton.BackColor = Color.DimGray;
+            loginButton.ForeColor = SystemColors.ButtonHighlight;
+            loginButton.Location = new Point(422, 290);
+            loginButton.Name = "loginButton";
+            loginButton.Size = new Size(227, 23);
+            loginButton.TabIndex = 31;
+            loginButton.Text = "Back to Login Page";
+            loginButton.UseVisualStyleBackColor = false;
+            loginButton.Click += loginButton_Click;
+            // 
+            // ageTextBox
+            // 
+            ageTextBox.Location = new Point(109, 123);
+            ageTextBox.Name = "ageTextBox";
+            ageTextBox.Size = new Size(100, 23);
+            ageTextBox.TabIndex = 16;
+            // 
+            // ageLabel
+            // 
+            ageLabel.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
+            ageLabel.AutoSize = true;
+            ageLabel.Font = new Font("Heebo", 11.25F, FontStyle.Regular, GraphicsUnit.Point);
+            ageLabel.ForeColor = SystemColors.ButtonHighlight;
+            ageLabel.Location = new Point(21, 122);
+            ageLabel.Name = "ageLabel";
+            ageLabel.Size = new Size(40, 22);
+            ageLabel.TabIndex = 17;
+            ageLabel.Text = "Age:";
+            ageLabel.TextAlign = ContentAlignment.MiddleCenter;
+            // 
             // femaleButton
             // 
             femaleButton.AutoSize = true;
-            femaleButton.Location = new Point(158, 132);
+            femaleButton.Location = new Point(146, 152);
             femaleButton.Name = "femaleButton";
             femaleButton.Size = new Size(63, 19);
             femaleButton.TabIndex = 15;
@@ -94,7 +133,7 @@
             // maleButton
             // 
             maleButton.AutoSize = true;
-            maleButton.Location = new Point(109, 132);
+            maleButton.Location = new Point(97, 152);
             maleButton.Name = "maleButton";
             maleButton.Size = new Size(51, 19);
             maleButton.TabIndex = 14;
@@ -108,7 +147,7 @@
             genderLabel.AutoSize = true;
             genderLabel.Font = new Font("Heebo", 11.25F, FontStyle.Regular, GraphicsUnit.Point);
             genderLabel.ForeColor = SystemColors.ButtonHighlight;
-            genderLabel.Location = new Point(23, 129);
+            genderLabel.Location = new Point(11, 149);
             genderLabel.Name = "genderLabel";
             genderLabel.Size = new Size(61, 22);
             genderLabel.TabIndex = 13;
@@ -117,7 +156,7 @@
             // 
             // heightTextBox
             // 
-            heightTextBox.Location = new Point(109, 100);
+            heightTextBox.Location = new Point(109, 94);
             heightTextBox.Name = "heightTextBox";
             heightTextBox.Size = new Size(100, 23);
             heightTextBox.TabIndex = 9;
@@ -148,7 +187,7 @@
             heightLabel.AutoSize = true;
             heightLabel.Font = new Font("Heebo", 11.25F, FontStyle.Regular, GraphicsUnit.Point);
             heightLabel.ForeColor = SystemColors.ButtonHighlight;
-            heightLabel.Location = new Point(23, 100);
+            heightLabel.Location = new Point(23, 93);
             heightLabel.Name = "heightLabel";
             heightLabel.Size = new Size(58, 22);
             heightLabel.TabIndex = 11;
@@ -201,12 +240,13 @@
             registerButton.AutoSizeMode = AutoSizeMode.GrowAndShrink;
             registerButton.BackColor = Color.DimGray;
             registerButton.ForeColor = SystemColors.ButtonHighlight;
-            registerButton.Location = new Point(574, 281);
+            registerButton.Location = new Point(134, 195);
             registerButton.Name = "registerButton";
             registerButton.Size = new Size(75, 23);
             registerButton.TabIndex = 3;
             registerButton.Text = "Register";
             registerButton.UseVisualStyleBackColor = false;
+            registerButton.Click += registerButton_Click;
             // 
             // Register
             // 
@@ -243,5 +283,8 @@
         private Button registerButton;
         private RadioButton femaleButton;
         private RadioButton maleButton;
+        private TextBox ageTextBox;
+        private Label ageLabel;
+        private Button loginButton;
     }
 }
