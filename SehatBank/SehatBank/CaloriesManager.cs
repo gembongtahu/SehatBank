@@ -124,7 +124,7 @@ namespace SehatBank
 
         private void addButton_Click(object sender, EventArgs e)
         {
-
+            int foodId = Food.GetFoodId(foodTextBox.Text);
         }
 
         private void editButton_Click(object sender, EventArgs e)

@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Npgsql;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -6,19 +7,34 @@ using System.Threading.Tasks;
 
 namespace SehatBank
 {
-    internal class User
+    public class User
     {
-        public string Name { get; }
-        public int Age { get; }
-        public int Weight { get; }
-        public int Height { get; }
-        public bool Gender { get; }
-        public User(string name, int age, int weight, int height, bool gender){
-            Name = name;
-            Age = age;
-            Weight = weight;
-            Height = height;
-            Gender = gender;
+        public static bool AuthenticateUser(string username, string password)
+        {
+            string constring = "Host=localhost;Port=5432;Username=postgres;Password=admin;Database=SehatBank";
+            using (NpgsqlConnection connection = new NpgsqlConnection(constring))
+            {
+                try
+                {
+                    connection.Open();
+                    string sql = "SELECT user_id FROM users WHERE user_name = @username AND password = @password";
+
+                    using (NpgsqlCommand command = new NpgsqlCommand(sql, connection))
+                    {
+                        command.Parameters.AddWithValue("@username", username);
+                        command.Parameters.AddWithValue("@password", password);
+
+                        object result = command.ExecuteScalar();
+
+                        return result != null && result != DBNull.Value;
+                    }
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("Error: " + ex.Message);
+                    return false;
+                }
+            }
         }
     }
 }

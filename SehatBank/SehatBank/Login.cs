@@ -55,9 +55,14 @@ namespace SehatBank
 
         private void loginButton_Click(object sender, EventArgs e)
         {
-            this.Hide();
-            MainMenu mainMenu = new MainMenu();
-            mainMenu.ShowDialog();
+            if (User.AuthenticateUser(usernameTextBox.Text, passwordTextBox.Text))
+            {
+                MessageBox.Show("Login Success");
+                this.Hide();
+                MainMenu mainMenu = new MainMenu();
+                mainMenu.ShowDialog();
+            }
+            else MessageBox.Show("Username atau Password yang anda masukkan salah!");
         }
 
         private void Login_Resize(object sender, EventArgs e)
