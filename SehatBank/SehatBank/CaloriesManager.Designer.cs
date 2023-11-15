@@ -31,9 +31,7 @@
             managerLabel = new Label();
             addButton = new Button();
             foodTextBox = new TextBox();
-            caloriesTextBox = new TextBox();
             foodLabel = new Label();
-            caloriesLabel = new Label();
             editButton = new Button();
             deleteButton = new Button();
             mainMenuButton = new Button();
@@ -78,17 +76,10 @@
             // 
             // foodTextBox
             // 
-            foodTextBox.Location = new Point(105, 25);
+            foodTextBox.Location = new Point(105, 38);
             foodTextBox.Name = "foodTextBox";
             foodTextBox.Size = new Size(100, 23);
             foodTextBox.TabIndex = 0;
-            // 
-            // caloriesTextBox
-            // 
-            caloriesTextBox.Location = new Point(105, 49);
-            caloriesTextBox.Name = "caloriesTextBox";
-            caloriesTextBox.Size = new Size(100, 23);
-            caloriesTextBox.TabIndex = 1;
             // 
             // foodLabel
             // 
@@ -96,25 +87,12 @@
             foodLabel.AutoSize = true;
             foodLabel.Font = new Font("Heebo", 11.25F, FontStyle.Regular, GraphicsUnit.Point);
             foodLabel.ForeColor = SystemColors.ButtonHighlight;
-            foodLabel.Location = new Point(7, 25);
+            foodLabel.Location = new Point(7, 38);
             foodLabel.Name = "foodLabel";
             foodLabel.Size = new Size(92, 22);
             foodLabel.TabIndex = 6;
             foodLabel.Text = "Food Name:";
             foodLabel.TextAlign = ContentAlignment.MiddleCenter;
-            // 
-            // caloriesLabel
-            // 
-            caloriesLabel.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
-            caloriesLabel.AutoSize = true;
-            caloriesLabel.Font = new Font("Heebo", 11.25F, FontStyle.Regular, GraphicsUnit.Point);
-            caloriesLabel.ForeColor = SystemColors.ButtonHighlight;
-            caloriesLabel.Location = new Point(29, 48);
-            caloriesLabel.Name = "caloriesLabel";
-            caloriesLabel.Size = new Size(70, 22);
-            caloriesLabel.TabIndex = 7;
-            caloriesLabel.Text = "Calories:";
-            caloriesLabel.TextAlign = ContentAlignment.MiddleCenter;
             // 
             // editButton
             // 
@@ -156,10 +134,8 @@
             // 
             // inputBox
             // 
-            inputBox.Controls.Add(caloriesTextBox);
             inputBox.Controls.Add(foodTextBox);
             inputBox.Controls.Add(foodLabel);
-            inputBox.Controls.Add(caloriesLabel);
             inputBox.Controls.Add(deleteButton);
             inputBox.Controls.Add(editButton);
             inputBox.Controls.Add(addButton);
@@ -273,6 +249,7 @@
             dataView.RowTemplate.Height = 25;
             dataView.Size = new Size(594, 241);
             dataView.TabIndex = 36;
+            dataView.CellClick += dataView_CellClick;
             // 
             // CaloriesManager
             // 
@@ -307,9 +284,7 @@
         private Label managerLabel;
         private Button addButton;
         private TextBox foodTextBox;
-        private TextBox caloriesTextBox;
         private Label foodLabel;
-        private Label caloriesLabel;
         private Button editButton;
         private Button deleteButton;
         private Button mainMenuButton;

@@ -29,10 +29,8 @@
         private void InitializeComponent()
         {
             inputBox = new GroupBox();
-            caloriesBurnedTextBox = new TextBox();
             activitiesTextBox = new TextBox();
             activitiesLabel = new Label();
-            caloriesBurnedLabel = new Label();
             deleteButton = new Button();
             editButton = new Button();
             addButton = new Button();
@@ -52,10 +50,8 @@
             // 
             // inputBox
             // 
-            inputBox.Controls.Add(caloriesBurnedTextBox);
             inputBox.Controls.Add(activitiesTextBox);
             inputBox.Controls.Add(activitiesLabel);
-            inputBox.Controls.Add(caloriesBurnedLabel);
             inputBox.Controls.Add(deleteButton);
             inputBox.Controls.Add(editButton);
             inputBox.Controls.Add(addButton);
@@ -67,16 +63,9 @@
             inputBox.TabStop = false;
             inputBox.Text = "Input Here";
             // 
-            // caloriesBurnedTextBox
-            // 
-            caloriesBurnedTextBox.Location = new Point(144, 49);
-            caloriesBurnedTextBox.Name = "caloriesBurnedTextBox";
-            caloriesBurnedTextBox.Size = new Size(100, 23);
-            caloriesBurnedTextBox.TabIndex = 1;
-            // 
             // activitiesTextBox
             // 
-            activitiesTextBox.Location = new Point(144, 25);
+            activitiesTextBox.Location = new Point(149, 36);
             activitiesTextBox.Name = "activitiesTextBox";
             activitiesTextBox.Size = new Size(100, 23);
             activitiesTextBox.TabIndex = 0;
@@ -87,25 +76,12 @@
             activitiesLabel.AutoSize = true;
             activitiesLabel.Font = new Font("Heebo", 11.25F, FontStyle.Regular, GraphicsUnit.Point);
             activitiesLabel.ForeColor = SystemColors.ButtonHighlight;
-            activitiesLabel.Location = new Point(17, 26);
+            activitiesLabel.Location = new Point(22, 37);
             activitiesLabel.Name = "activitiesLabel";
             activitiesLabel.Size = new Size(121, 22);
             activitiesLabel.TabIndex = 6;
             activitiesLabel.Text = "Activities Name:";
             activitiesLabel.TextAlign = ContentAlignment.MiddleCenter;
-            // 
-            // caloriesBurnedLabel
-            // 
-            caloriesBurnedLabel.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
-            caloriesBurnedLabel.AutoSize = true;
-            caloriesBurnedLabel.Font = new Font("Heebo", 11.25F, FontStyle.Regular, GraphicsUnit.Point);
-            caloriesBurnedLabel.ForeColor = SystemColors.ButtonHighlight;
-            caloriesBurnedLabel.Location = new Point(18, 50);
-            caloriesBurnedLabel.Name = "caloriesBurnedLabel";
-            caloriesBurnedLabel.Size = new Size(120, 22);
-            caloriesBurnedLabel.TabIndex = 7;
-            caloriesBurnedLabel.Text = "Calories Burned:";
-            caloriesBurnedLabel.TextAlign = ContentAlignment.MiddleCenter;
             // 
             // deleteButton
             // 
@@ -118,6 +94,7 @@
             deleteButton.TabIndex = 4;
             deleteButton.Text = "Delete";
             deleteButton.UseVisualStyleBackColor = false;
+            deleteButton.Click += deleteButton_Click;
             // 
             // editButton
             // 
@@ -130,6 +107,7 @@
             editButton.TabIndex = 3;
             editButton.Text = "Edit";
             editButton.UseVisualStyleBackColor = false;
+            editButton.Click += editButton_Click;
             // 
             // addButton
             // 
@@ -303,10 +281,8 @@
         #endregion
 
         private GroupBox inputBox;
-        private TextBox caloriesBurnedTextBox;
         private TextBox activitiesTextBox;
         private Label activitiesLabel;
-        private Label caloriesBurnedLabel;
         private Button deleteButton;
         private Button editButton;
         private Button addButton;
