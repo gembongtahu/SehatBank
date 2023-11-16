@@ -11,8 +11,7 @@ namespace SehatBank
     {
         public static int AuthenticateUser(string username, string password)
         {
-            string constring = "Host=localhost;Port=5432;Username=postgres;Password=admin;Database=SehatBank";
-            using (NpgsqlConnection connection = new NpgsqlConnection(constring))
+            using (NpgsqlConnection connection = new NpgsqlConnection(UserSession.constring))
             {
                 try
                 {

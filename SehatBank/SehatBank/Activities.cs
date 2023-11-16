@@ -11,9 +11,8 @@ namespace SehatBank
     {
         public static List<string> GetActivitiesList()
         {
-            string constring = "Host=localhost;Port=5432;Username=postgres;Password=admin;Database=SehatBank";
             List<string> list = new List<string>();
-            using (NpgsqlConnection connection = new NpgsqlConnection(constring))
+            using (NpgsqlConnection connection = new NpgsqlConnection(UserSession.constring))
             {
                 try
                 {
@@ -43,9 +42,8 @@ namespace SehatBank
         public static int GetActivitiesId(string activitiesName)
         {
             int activitiesId = -1; // Default value indicating not found
-            string constring = "Host=localhost;Port=5432;Username=postgres;Password=admin;Database=SehatBank";
 
-            using (NpgsqlConnection connection = new NpgsqlConnection(constring))
+            using (NpgsqlConnection connection = new NpgsqlConnection(UserSession.constring))
             {
                 try
                 {
