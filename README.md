@@ -11,7 +11,7 @@ Anggota 2: Daru Okta Buana - 21/475397/TK/52480
 
 How to Sehat Bank App (Optional)???
 1. Clone this repositories
-2. Create a new database and restore the sehatbank.sql into the database
+2. Create a new postgresql database and restore the sehatbank.sql into the database
 3. Change the connection string in the source code (UserSession.constring) with your own database connection string 
 4. Build and run it yourself :) (Optional)
 
