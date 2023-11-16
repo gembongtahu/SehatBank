@@ -16,7 +16,6 @@ namespace SehatBank
     public partial class CaloriesManager : Form
     {
         private NpgsqlConnection con;
-        string constring = "Host=localhost;Port=5432;Username=postgres;Password=admin;Database=SehatBank";
         public DataTable dt;
         public static NpgsqlCommand cmd;
         private string sql = null;
@@ -50,7 +49,7 @@ namespace SehatBank
 
         private void CaloriesManager_Load(object sender, EventArgs e)
         {
-            con = new NpgsqlConnection(constring);
+            con = new NpgsqlConnection(UserSession.constring);
             originalSize = this.Bounds;
             mmButton = mainMenuButton.Bounds;
             aButton = addButton.Bounds;
