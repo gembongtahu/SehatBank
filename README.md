@@ -17,7 +17,7 @@ How to Sehat Bank App (Optional)???
 
 ORRRRRR you can just view this video below where i record myself demoing this Sehat Bank App :)
 
-Link: 
+Link: https://youtu.be/0YdjJIGosRo
 
 ![Class Diagram](https://i.imgur.com/ZK8faos.jpg)
 
