@@ -16,7 +16,7 @@ namespace SehatBank
 {
     public partial class MainMenu : Form
     {
-        private Rectangle qButton, aButton, cButton, dButton, originalSize;
+        private Rectangle qButton, aButton, cButton, dButton, lButton, originalSize;
         private Rectangle mmLabel;
         private Font mmFont;
         Resize resize = new Resize();
@@ -61,6 +61,7 @@ namespace SehatBank
             aButton = activitiesManagerButton.Bounds;
             cButton = caloriesManagerButton.Bounds;
             dButton = databaseButton.Bounds;
+            lButton = logOutButton.Bounds;
             mmLabel = mainMenuLabel.Bounds;
             mmFont = mainMenuLabel.Font;
         }
@@ -72,6 +73,7 @@ namespace SehatBank
             resize.resizeControl(cButton, caloriesManagerButton, originalSize, this.Width, this.Height);
             resize.resizeControl(dButton, databaseButton, originalSize, this.Width, this.Height);
             resize.resizeControl(mmLabel, mainMenuLabel, originalSize, this.Width, this.Height);
+            resize.resizeControl(lButton, logOutButton, originalSize, this.Width, this.Height);
             resize.resizeFont(mmFont, mainMenuLabel, originalSize, this.Height);
         }
 

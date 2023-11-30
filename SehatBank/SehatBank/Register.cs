@@ -88,6 +88,7 @@ namespace SehatBank
             resize.resizeFont(wFont, weightLabel, originalSize, this.Height);
             resize.resizeFont(hFont, heightLabel, originalSize, this.Height);
             resize.resizeFont(gFont, genderLabel, originalSize, this.Height);
+            resize.resizeFont(aFont, ageLabel, originalSize, this.Height);
             resize.resizeControl(iBox, inputBox, originalSize, this.Width, this.Height);
         }
 

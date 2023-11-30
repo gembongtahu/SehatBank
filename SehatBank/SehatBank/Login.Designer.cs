@@ -158,7 +158,7 @@
             quitButton.Location = new Point(702, 415);
             quitButton.Name = "quitButton";
             quitButton.Size = new Size(75, 23);
-            quitButton.TabIndex = 30;
+            quitButton.TabIndex = 4;
             quitButton.Text = "Quit";
             quitButton.UseVisualStyleBackColor = false;
             quitButton.Click += quitButton_Click;

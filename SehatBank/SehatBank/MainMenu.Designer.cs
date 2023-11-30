@@ -56,7 +56,7 @@
             quitButton.Location = new Point(662, 375);
             quitButton.Name = "quitButton";
             quitButton.Size = new Size(75, 23);
-            quitButton.TabIndex = 1;
+            quitButton.TabIndex = 4;
             quitButton.Text = "Quit";
             quitButton.UseVisualStyleBackColor = false;
             quitButton.Click += quitButton_Click;
@@ -68,7 +68,7 @@
             caloriesManagerButton.Location = new Point(219, 211);
             caloriesManagerButton.Name = "caloriesManagerButton";
             caloriesManagerButton.Size = new Size(128, 23);
-            caloriesManagerButton.TabIndex = 2;
+            caloriesManagerButton.TabIndex = 0;
             caloriesManagerButton.Text = "Calories Manager";
             caloriesManagerButton.UseVisualStyleBackColor = false;
             caloriesManagerButton.Click += caloriesManagerButton_Click;
@@ -80,7 +80,7 @@
             activitiesManagerButton.Location = new Point(353, 211);
             activitiesManagerButton.Name = "activitiesManagerButton";
             activitiesManagerButton.Size = new Size(128, 23);
-            activitiesManagerButton.TabIndex = 3;
+            activitiesManagerButton.TabIndex = 1;
             activitiesManagerButton.Text = "Activities Manager";
             activitiesManagerButton.UseVisualStyleBackColor = false;
             activitiesManagerButton.Click += activitiesManagerButton_Click;
@@ -92,7 +92,7 @@
             databaseButton.Location = new Point(487, 211);
             databaseButton.Name = "databaseButton";
             databaseButton.Size = new Size(128, 23);
-            databaseButton.TabIndex = 4;
+            databaseButton.TabIndex = 2;
             databaseButton.Text = "Database";
             databaseButton.UseVisualStyleBackColor = false;
             databaseButton.Click += databaseButton_Click;
@@ -104,7 +104,7 @@
             logOutButton.Location = new Point(109, 365);
             logOutButton.Name = "logOutButton";
             logOutButton.Size = new Size(75, 23);
-            logOutButton.TabIndex = 5;
+            logOutButton.TabIndex = 3;
             logOutButton.Text = "Log Out";
             logOutButton.UseVisualStyleBackColor = false;
             logOutButton.Click += logOutButton_Click;
