@@ -24,6 +24,7 @@ namespace SehatBank
         private Rectangle mLabel, fLabel;
         private Rectangle fTextBox;
         private Rectangle iBox;
+        private Rectangle dView;
         private Font mFont, fFont;
         Resize resize = new Resize();
         List<string> sqlCommandList = new List<string>();
@@ -69,6 +70,7 @@ namespace SehatBank
             mLabel = managerLabel.Bounds;
             fLabel = activitiesLabel.Bounds;
             fTextBox = activitiesTextBox.Bounds;
+            dView = dataView.Bounds;
             iBox = inputBox.Bounds;
             mFont = managerLabel.Font;
             fFont = activitiesLabel.Font;
@@ -98,6 +100,7 @@ namespace SehatBank
             resize.resizeControl(fLabel, activitiesLabel, originalSize, this.Width, this.Height);
             resize.resizeControl(fTextBox, activitiesTextBox, originalSize, this.Width, this.Height);
             resize.resizeControl(iBox, inputBox, originalSize, this.Width, this.Height);
+            resize.resizeControl(dView, dataView, originalSize, this.Width, this.Height);
             resize.resizeFont(fFont, activitiesLabel, originalSize, this.Height);
             resize.resizeFont(mFont, managerLabel, originalSize, this.Height);
         }

@@ -58,7 +58,7 @@
             mainMenuButton.Location = new Point(667, 415);
             mainMenuButton.Name = "mainMenuButton";
             mainMenuButton.Size = new Size(107, 23);
-            mainMenuButton.TabIndex = 3;
+            mainMenuButton.TabIndex = 4;
             mainMenuButton.Text = "Main Menu";
             mainMenuButton.UseVisualStyleBackColor = false;
             mainMenuButton.Click += mainMenuButton_Click;
@@ -70,7 +70,7 @@
             showActivitiesButton.Location = new Point(512, 83);
             showActivitiesButton.Name = "showActivitiesButton";
             showActivitiesButton.Size = new Size(157, 23);
-            showActivitiesButton.TabIndex = 5;
+            showActivitiesButton.TabIndex = 1;
             showActivitiesButton.Text = "Show Activities Database";
             showActivitiesButton.UseVisualStyleBackColor = false;
             showActivitiesButton.Click += showActivitiesButton_Click;
@@ -82,7 +82,7 @@
             showFoodButton.Location = new Point(135, 83);
             showFoodButton.Name = "showFoodButton";
             showFoodButton.Size = new Size(157, 23);
-            showFoodButton.TabIndex = 6;
+            showFoodButton.TabIndex = 0;
             showFoodButton.Text = "Show Food Database";
             showFoodButton.UseVisualStyleBackColor = false;
             showFoodButton.Click += showFoodButton_Click;
@@ -96,7 +96,7 @@
             foodDataView.Name = "foodDataView";
             foodDataView.RowTemplate.Height = 25;
             foodDataView.Size = new Size(283, 287);
-            foodDataView.TabIndex = 7;
+            foodDataView.TabIndex = 2;
             // 
             // activitiesDataView
             // 
@@ -107,7 +107,7 @@
             activitiesDataView.Name = "activitiesDataView";
             activitiesDataView.RowTemplate.Height = 25;
             activitiesDataView.Size = new Size(283, 287);
-            activitiesDataView.TabIndex = 8;
+            activitiesDataView.TabIndex = 3;
             // 
             // DatabaseManager
             // 

@@ -91,20 +91,20 @@
             loginButton.AutoSizeMode = AutoSizeMode.GrowAndShrink;
             loginButton.BackColor = Color.DimGray;
             loginButton.ForeColor = SystemColors.ButtonHighlight;
-            loginButton.Location = new Point(422, 290);
+            loginButton.Location = new Point(0, 199);
             loginButton.Name = "loginButton";
-            loginButton.Size = new Size(227, 23);
-            loginButton.TabIndex = 31;
+            loginButton.Size = new Size(655, 120);
+            loginButton.TabIndex = 8;
             loginButton.Text = "Back to Login Page";
             loginButton.UseVisualStyleBackColor = false;
             loginButton.Click += loginButton_Click;
             // 
             // ageTextBox
             // 
-            ageTextBox.Location = new Point(109, 123);
+            ageTextBox.Location = new Point(109, 117);
             ageTextBox.Name = "ageTextBox";
-            ageTextBox.Size = new Size(100, 23);
-            ageTextBox.TabIndex = 16;
+            ageTextBox.Size = new Size(540, 23);
+            ageTextBox.TabIndex = 4;
             // 
             // ageLabel
             // 
@@ -112,7 +112,7 @@
             ageLabel.AutoSize = true;
             ageLabel.Font = new Font("Heebo", 11.25F, FontStyle.Regular, GraphicsUnit.Point);
             ageLabel.ForeColor = SystemColors.ButtonHighlight;
-            ageLabel.Location = new Point(21, 122);
+            ageLabel.Location = new Point(63, 117);
             ageLabel.Name = "ageLabel";
             ageLabel.Size = new Size(40, 22);
             ageLabel.TabIndex = 17;
@@ -122,10 +122,10 @@
             // femaleButton
             // 
             femaleButton.AutoSize = true;
-            femaleButton.Location = new Point(146, 152);
+            femaleButton.Location = new Point(158, 142);
             femaleButton.Name = "femaleButton";
             femaleButton.Size = new Size(63, 19);
-            femaleButton.TabIndex = 15;
+            femaleButton.TabIndex = 6;
             femaleButton.TabStop = true;
             femaleButton.Text = "Female";
             femaleButton.UseVisualStyleBackColor = true;
@@ -133,10 +133,10 @@
             // maleButton
             // 
             maleButton.AutoSize = true;
-            maleButton.Location = new Point(97, 152);
+            maleButton.Location = new Point(109, 142);
             maleButton.Name = "maleButton";
             maleButton.Size = new Size(51, 19);
-            maleButton.TabIndex = 14;
+            maleButton.TabIndex = 5;
             maleButton.TabStop = true;
             maleButton.Text = "Male";
             maleButton.UseVisualStyleBackColor = true;
@@ -147,7 +147,7 @@
             genderLabel.AutoSize = true;
             genderLabel.Font = new Font("Heebo", 11.25F, FontStyle.Regular, GraphicsUnit.Point);
             genderLabel.ForeColor = SystemColors.ButtonHighlight;
-            genderLabel.Location = new Point(11, 149);
+            genderLabel.Location = new Point(42, 139);
             genderLabel.Name = "genderLabel";
             genderLabel.Size = new Size(61, 22);
             genderLabel.TabIndex = 13;
@@ -158,15 +158,15 @@
             // 
             heightTextBox.Location = new Point(109, 94);
             heightTextBox.Name = "heightTextBox";
-            heightTextBox.Size = new Size(100, 23);
-            heightTextBox.TabIndex = 9;
+            heightTextBox.Size = new Size(540, 23);
+            heightTextBox.TabIndex = 3;
             // 
             // weightTextBox
             // 
             weightTextBox.Location = new Point(109, 71);
             weightTextBox.Name = "weightTextBox";
-            weightTextBox.Size = new Size(100, 23);
-            weightTextBox.TabIndex = 8;
+            weightTextBox.Size = new Size(540, 23);
+            weightTextBox.TabIndex = 2;
             // 
             // weightLabel
             // 
@@ -174,7 +174,7 @@
             weightLabel.AutoSize = true;
             weightLabel.Font = new Font("Heebo", 11.25F, FontStyle.Regular, GraphicsUnit.Point);
             weightLabel.ForeColor = SystemColors.ButtonHighlight;
-            weightLabel.Location = new Point(21, 70);
+            weightLabel.Location = new Point(43, 70);
             weightLabel.Name = "weightLabel";
             weightLabel.Size = new Size(60, 22);
             weightLabel.TabIndex = 10;
@@ -187,7 +187,7 @@
             heightLabel.AutoSize = true;
             heightLabel.Font = new Font("Heebo", 11.25F, FontStyle.Regular, GraphicsUnit.Point);
             heightLabel.ForeColor = SystemColors.ButtonHighlight;
-            heightLabel.Location = new Point(23, 93);
+            heightLabel.Location = new Point(45, 94);
             heightLabel.Name = "heightLabel";
             heightLabel.Size = new Size(58, 22);
             heightLabel.TabIndex = 11;
@@ -198,7 +198,7 @@
             // 
             passwordTextBox.Location = new Point(109, 48);
             passwordTextBox.Name = "passwordTextBox";
-            passwordTextBox.Size = new Size(100, 23);
+            passwordTextBox.Size = new Size(540, 23);
             passwordTextBox.TabIndex = 1;
             passwordTextBox.UseSystemPasswordChar = true;
             // 
@@ -206,7 +206,7 @@
             // 
             usernameTextBox.Location = new Point(109, 25);
             usernameTextBox.Name = "usernameTextBox";
-            usernameTextBox.Size = new Size(100, 23);
+            usernameTextBox.Size = new Size(540, 23);
             usernameTextBox.TabIndex = 0;
             // 
             // usernameLabel
@@ -228,7 +228,7 @@
             passwordLabel.AutoSize = true;
             passwordLabel.Font = new Font("Heebo", 11.25F, FontStyle.Regular, GraphicsUnit.Point);
             passwordLabel.ForeColor = SystemColors.ButtonHighlight;
-            passwordLabel.Location = new Point(23, 48);
+            passwordLabel.Location = new Point(23, 46);
             passwordLabel.Name = "passwordLabel";
             passwordLabel.Size = new Size(80, 22);
             passwordLabel.TabIndex = 7;
@@ -240,10 +240,10 @@
             registerButton.AutoSizeMode = AutoSizeMode.GrowAndShrink;
             registerButton.BackColor = Color.DimGray;
             registerButton.ForeColor = SystemColors.ButtonHighlight;
-            registerButton.Location = new Point(134, 195);
+            registerButton.Location = new Point(562, 168);
             registerButton.Name = "registerButton";
-            registerButton.Size = new Size(75, 23);
-            registerButton.TabIndex = 3;
+            registerButton.Size = new Size(87, 23);
+            registerButton.TabIndex = 7;
             registerButton.Text = "Register";
             registerButton.UseVisualStyleBackColor = false;
             registerButton.Click += registerButton_Click;
