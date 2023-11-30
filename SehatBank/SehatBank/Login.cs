@@ -60,7 +60,7 @@ namespace SehatBank
             if (userID != 0)
             {
                 UserSession.SetUserId(userID);
-                MessageBox.Show("Login Success with User ID = " + UserSession.UserId.ToString());
+                MessageBox.Show("Login Success");
                 this.Hide();
                 MainMenu mainMenu = new MainMenu();
                 mainMenu.ShowDialog();
