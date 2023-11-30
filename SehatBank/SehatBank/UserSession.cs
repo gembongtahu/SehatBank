@@ -9,7 +9,7 @@ namespace SehatBank
     public static class UserSession
     {
         public static int UserId = 0;
-        public static string constring = "Host=localhost;Port=5432;Username=postgres;Password=admin;Database=SehatBank";
+        public static string constring = "Host=localhost;Port=5432;Username=postgres;Password=FateGrandOrder1;Database=SehatBank";
         public static void SetUserId(int userId)
         {
             UserId = userId;
